@@ -259,7 +259,9 @@ function question8() {
         event.preventDefault();
         question7();
     });
-
+    next.addEventListener("click", function(){
+       window.location.href = './indexlast.html';
+    });
     ABCD.addEventListener("click", function(event){
         event.preventDefault();
         if (event.currentTarget.id == "choice1"){
