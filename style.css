@@ -1,12 +1,26 @@
 * {
     margin:0;
     font-family: Arial;
+    background-color: rgb(132, 92, 172);
+    color:rgb(216, 208, 140);
+}
+h1 {
+    margin-bottom: 20px;
 }
 
 .fbuttons {
-
+ background-color:rgb(216, 208, 140);
+ color: rgb(132, 92, 172) ;
+ margin-right: 15px;
+ margin-bottom: 10px;
 }
 
+.slides {
+    background-color:rgb(216, 208, 140);
+    color: rgb(132, 92, 172) ;
+    margin-left: 10px;
+
+}
 ul li {
     list-style: none;
 }
