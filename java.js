@@ -20,7 +20,7 @@ var choice4 = document.getElementById("choice4");
 
 var CorFal = document.getElementById("CF");
 
-var ABCD = document.getElementsByClassName("ABCD");
+var fbuttons = document.getElementsByClassName("fbuttons");
 
 var next = document.getElementById("next");
 
@@ -49,8 +49,8 @@ function question1() {
         question2();
     });
 
-    ABCD.addEventListener("click", function(event){
-        if (event.currentTarget.id == "choice1"){
+    fbuttons.addEventListener("click", function(event){
+        if (event == choice1){
             CorFal.innerHTML = "Correct!";
 
             //add score to local storage change button style to permanent color onclick
