@@ -1,4 +1,3 @@
-
 var question =  document.getElementById("question");
 
 var choiceA = document.getElementById("A"); 
@@ -27,22 +26,30 @@ var next = document.getElementById("next");
 
 var previous = document.getElementById("previous");
 
+var choicetextA = choiceA.childNodes[2];
+
+var choicetextB = choiceB.childNodes[2];
+var choicetextC = choiceC.childNodes[2];
+var choicetextD = choiceD.childNodes[2];
+
+
+
 question1();
 
 function question1() {
-    question.innerHTML = "";
-    choiceA.innerHTML = "A";
-    choiceB.innerHTML = "";
-    choiceC.innerHTML = "";
-    choiceD.innerHTML = "";
+    question.innerHTML += "";
+    choicetextA.nodeValue = "A";
+    choicetextB.nodeValue = "g";
+    choicetextC.nodeValue = "d";
+    choicetextD.textContent = "d";
 
     next.addEventListener("click", function(event){
         event.preventDefault();
+        
         question2();
     });
 
     ABCD.addEventListener("click", function(event){
-        event.preventDefault();
         if (event.currentTarget.id == "choice1"){
             CorFal.innerHTML = "Correct!";
 
@@ -58,11 +65,11 @@ function question1() {
 };
 
 function question2() {
-    question.innerHTML = "";
-    choiceA.innerHTML = "B";
-    choiceB.innerHTML = "";
-    choiceC.innerHTML = "";
-    choiceD.innerHTML = "";
+    question.innerHTML += "";
+    choicetextA.nodeValue = "B";
+    choicetextB.nodeValue = "g";
+    choicetextC.nodeValue = "d";
+    choicetextD.textContent = "F";
 
     next.addEventListener("click", function(event){
         event.preventDefault();
@@ -90,12 +97,11 @@ function question2() {
 };
 
 function question3() {
-    question.innerHTML = "";
-    choiceA.innerHTML = "C";
-    choiceB.innerHTML = "";
-    choiceC.innerHTML = "";
-    choiceD.innerHTML = "";
-
+    question.innerHTML += "";
+    choicetextA.nodeValue = "B";
+    choicetextB.nodeValue = "g";
+    choicetextC.nodeValue = "d";
+    choicetextD.textContent = "F";
     next.addEventListener("click", function(event){
         event.preventDefault();
         question4();
@@ -123,11 +129,11 @@ function question3() {
 };
 
 function question4() {
-    question.innerHTML = "";
-    choiceA.innerHTML = "D";
-    choiceB.innerHTML = "";
-    choiceC.innerHTML = "";
-    choiceD.innerHTML = "";
+    question.innerHTML += "";
+    choicetextA.nodeValue = "B";
+    choicetextB.nodeValue = "g";
+    choicetextC.nodeValue = "d";
+    choicetextD.textContent = "F";
 
     next.addEventListener("click", function(event){
         event.preventDefault();
@@ -155,11 +161,11 @@ function question4() {
 };
 
 function question5() {
-    question.innerHTML = "";
-    choiceA.innerHTML = "E";
-    choiceB.innerHTML = "";
-    choiceC.innerHTML = "";
-    choiceD.innerHTML = "";
+    question.innerHTML += "";
+    choicetextA.nodeValue = "B";
+    choicetextB.nodeValue = "g";
+    choicetextC.nodeValue = "d";
+    choicetextD.textContent = "F";
 
     next.addEventListener("click", function(event){
         event.preventDefault();
@@ -186,11 +192,11 @@ function question5() {
 };
 
 function question6() {
-    question.innerHTML = "";
-    choiceA.innerHTML = "G";
-    choiceB.innerHTML = "";
-    choiceC.innerHTML = "";
-    choiceD.innerHTML = "";
+    question.innerHTML += "";
+    choicetextA.nodeValue = "B";
+    choicetextB.nodeValue = "g";
+    choicetextC.nodeValue = "d";
+    choicetextD.textContent = "F";
 
     next.addEventListener("click", function(event){
         event.preventDefault();
@@ -218,11 +224,11 @@ function question6() {
 };
 
 function question7() {
-    question.innerHTML = "";
-    choiceA.innerHTML = "H";
-    choiceB.innerHTML = "";
-    choiceC.innerHTML = "";
-    choiceD.innerHTML = "";
+    question.innerHTML += "";
+    choicetextA.nodeValue = "B";
+    choicetextB.nodeValue = "g";
+    choicetextC.nodeValue = "d";
+    choicetextD.textContent = "F";
 
     next.addEventListener("click", function(event){
         event.preventDefault();
@@ -249,19 +255,17 @@ function question7() {
 };
 
 function question8() {
-    question.innerHTML = "";
-    choiceA.innerHTML = "I";
-    choiceB.innerHTML = "";
-    choiceC.innerHTML = "";
-    choiceD.innerHTML = "";
+    question.innerHTML += "";
+    choicetextA.nodeValue = "B";
+    choicetextB.nodeValue = "g";
+    choicetextC.nodeValue = "d";
+    choicetextD.textContent = "F";
 
     previous.addEventListener("click", function(event){
         event.preventDefault();
         question7();
     });
-    next.addEventListener("click", function(){
-       window.location.href = './indexlast.html';
-    });
+
     ABCD.addEventListener("click", function(event){
         event.preventDefault();
         if (event.currentTarget.id == "choice1"){
@@ -276,30 +280,17 @@ function question8() {
     });
 };
 /* stringify
-
 mathfloor math Random 
-
 for iteration 
-
 keydown button hidden to revealed
-
 create a timer in absolute position if timer -- 0 s -- then jump to final tab
-
-
 create a enter keydown event for when the user makes their quiz answer choice
-
 create a local storage memory of their answers and create conditional statements to the correct choice
-
 if choice is right add to correct tally variable
-
 if choice is wrong add to wrong tally variable and subtract 5 sec from clock
-
 display in a fraction format at the score section of user choice/total score = percentage score
 A, B, C etc letter grade
-
 create a list of user score compared to local storage memory of other peoples scores
-
-
 create a function for each quiz question that contains:
 the new question
 the new choices
