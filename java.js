@@ -23,17 +23,26 @@ var CorFal = document.getElementById("CF");
 
 var ABCD = document.getElementsByClassName("ABCD");
 
+var next = document.getElementById("next");
 
+var previous = document.getElementById("previous");
+
+question1();
 
 function question1() {
     question.innerHTML = "";
-    choiceA.innerHTML = "";
+    choiceA.innerHTML = "A";
     choiceB.innerHTML = "";
     choiceC.innerHTML = "";
     choiceD.innerHTML = "";
-    
+
+    next.addEventListener("click", function(event){
+        event.preventDefault();
+        question2();
+    });
+
     ABCD.addEventListener("click", function(event){
-        preventDefault(event);
+        event.preventDefault();
         if (event.currentTarget.id == "choice1"){
             CorFal.innerHTML = "Correct!";
 
@@ -43,18 +52,30 @@ function question1() {
             //add score to local storage subtract time
         };
 
-    })
+    });
+   
+
 };
 
 function question2() {
     question.innerHTML = "";
-    choiceA.innerHTML = "";
+    choiceA.innerHTML = "B";
     choiceB.innerHTML = "";
     choiceC.innerHTML = "";
     choiceD.innerHTML = "";
 
+    next.addEventListener("click", function(event){
+        event.preventDefault();
+        question3();
+    });
+
+    previous.addEventListener("click", function(event){
+        event.preventDefault();
+        question1();
+    });
+
     ABCD.addEventListener("click", function(event){
-        preventDefault(event);
+        event.preventDefault();
         if (event.currentTarget.id == "choice1"){
             CorFal.innerHTML = "Correct!";
 
@@ -64,18 +85,30 @@ function question2() {
             //add score to local storage subtract time
         };
 
-    })
+    });
+
 };
 
 function question3() {
     question.innerHTML = "";
-    choiceA.innerHTML = "";
+    choiceA.innerHTML = "C";
     choiceB.innerHTML = "";
     choiceC.innerHTML = "";
     choiceD.innerHTML = "";
 
+    next.addEventListener("click", function(event){
+        event.preventDefault();
+        question4();
+    });
+
+    previous.addEventListener("click", function(event){
+        event.preventDefault();
+        question2();
+    });
+
+
     ABCD.addEventListener("click", function(event){
-        preventDefault(event);
+        event.preventDefault();
         if (event.currentTarget.id == "choice1"){
             CorFal.innerHTML = "Correct!";
 
@@ -85,18 +118,30 @@ function question3() {
             //add score to local storage subtract time
         };
 
-    })
+    });
+
 };
 
 function question4() {
     question.innerHTML = "";
-    choiceA.innerHTML = "";
+    choiceA.innerHTML = "D";
     choiceB.innerHTML = "";
     choiceC.innerHTML = "";
     choiceD.innerHTML = "";
 
+    next.addEventListener("click", function(event){
+        event.preventDefault();
+        question5();
+    });
+
+    previous.addEventListener("click", function(event){
+        event.preventDefault();
+        question3();
+    });
+
+
     ABCD.addEventListener("click", function(event){
-        preventDefault(event);
+        event.preventDefault();
         if (event.currentTarget.id == "choice1"){
             CorFal.innerHTML = "Correct!";
 
@@ -106,18 +151,28 @@ function question4() {
             //add score to local storage subtract time
         };
 
-    })
+    });
 };
 
 function question5() {
     question.innerHTML = "";
-    choiceA.innerHTML = "";
+    choiceA.innerHTML = "E";
     choiceB.innerHTML = "";
     choiceC.innerHTML = "";
     choiceD.innerHTML = "";
 
+    next.addEventListener("click", function(event){
+        event.preventDefault();
+        question6();
+    });
+
+    previous.addEventListener("click", function(event){
+        event.preventDefault();
+        question4();
+    });
+
     ABCD.addEventListener("click", function(event){
-        preventDefault(event);
+        event.preventDefault();
         if (event.currentTarget.id == "choice1"){
             CorFal.innerHTML = "Correct!";
 
@@ -127,18 +182,29 @@ function question5() {
             //add score to local storage subtract time
         };
 
-    })
+    });
 };
 
 function question6() {
     question.innerHTML = "";
-    choiceA.innerHTML = "";
+    choiceA.innerHTML = "G";
     choiceB.innerHTML = "";
     choiceC.innerHTML = "";
     choiceD.innerHTML = "";
 
+    next.addEventListener("click", function(event){
+        event.preventDefault();
+        question7();
+    });
+
+    previous.addEventListener("click", function(event){
+        event.preventDefault();
+        question5();
+    });
+
+
     ABCD.addEventListener("click", function(event){
-        preventDefault(event);
+        event.preventDefault();
         if (event.currentTarget.id == "choice1"){
             CorFal.innerHTML = "Correct!";
 
@@ -148,18 +214,28 @@ function question6() {
             //add score to local storage subtract time
         };
 
-    })
+    });
 };
 
 function question7() {
     question.innerHTML = "";
-    choiceA.innerHTML = "";
+    choiceA.innerHTML = "H";
     choiceB.innerHTML = "";
     choiceC.innerHTML = "";
     choiceD.innerHTML = "";
 
+    next.addEventListener("click", function(event){
+        event.preventDefault();
+        question8();
+    });
+
+    previous.addEventListener("click", function(event){
+        event.preventDefault();
+        question6();
+    });
+
     ABCD.addEventListener("click", function(event){
-        preventDefault(event);
+        event.preventDefault();
         if (event.currentTarget.id == "choice1"){
             CorFal.innerHTML = "Correct!";
 
@@ -169,18 +245,23 @@ function question7() {
             //add score to local storage subtract time
         };
 
-    })
+    });
 };
 
 function question8() {
     question.innerHTML = "";
-    choiceA.innerHTML = "";
+    choiceA.innerHTML = "I";
     choiceB.innerHTML = "";
     choiceC.innerHTML = "";
     choiceD.innerHTML = "";
 
+    previous.addEventListener("click", function(event){
+        event.preventDefault();
+        question7();
+    });
+
     ABCD.addEventListener("click", function(event){
-        preventDefault(event);
+        event.preventDefault();
         if (event.currentTarget.id == "choice1"){
             CorFal.innerHTML = "Correct!";
 
@@ -190,7 +271,7 @@ function question8() {
             //add score to local storage subtract time
         };
 
-    })
+    });
 };
 /* stringify
 
