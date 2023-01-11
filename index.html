@@ -3,20 +3,34 @@
 <head>
     <meta charset="UTF-8">/>
     <link rel="stylesheet" href="./style.css"/>
-    <title>Coding Quiz</title>
+    <title>Code Quiz</title>
 </head>
 
 <body>
-    <div id = "word-guess">
-        <h1> Guess the Word!</h1>
-        <span id ="worddisplay"></span>
+    <div id = "bodytitle">
+        <h1> Code Quiz</h1>
+        <span id ="question"></span>
     </div>
-    <div id = "score">
-        <h1> Your Score</h1>
-        <span class = "score" id="wins"></span>
-        <span class = "score" id="losses"></span>
-        <button id="reset"></button>
+    <div id="choices">
+        <h3 id="CF"></h3>
+        <ul class="ABCD">
+            <li class="answer" id="A">
+                <button class="4buttons" id="choice1"></button>
+            </li>
+            <li class="answer" id="B">
+                <button class="4buttons" id="choice2"></button>
+            </li>
+            <li class="answer" id="C">
+                <button class="4buttons" id="choice3"></button>
+            </li>
+            <li class="answer" id="D">
+                <button class="4buttons" id="choice4"></button>
+            </li>
+        </ul>
+        <button class="slides" id="previous"></button>
+        <button class="slides" id="next"></button>
     </div>
+
     <script src = "./java.js"></script>
 </body>
 </html>

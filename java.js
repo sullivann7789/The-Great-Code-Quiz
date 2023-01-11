@@ -1,28 +1,197 @@
 
-var wordList = ["python","java","guitar","venus","coding","matrix","island", "chess","silver", "mobile","proxy","email","server"];
-var input =  document.getElementById("inputs");
-var startBtn = document.getElementById("start");
-var resetBtn = document.getElementById("reset");
-var worddisplay = document.getElementById("worddisplay");
-console.log(wordList);
-var randomword = Math.floor(Math.random() * wordList.length);
-var choice = wordList[randomword];
-var letter = choice.split('');
-console.log(letter[0]);
-function wordchoice() {
+var question =  document.getElementById("question");
 
-    worddisplay.innerHTML = choice;
-    worddisplay.setAttribute("style", "display: none;");
-    guess();
-}
+var choiceA = document.getElementById("A"); 
 
-function guess() {
+var choiceB = document.getElementById("B");
 
-    document.addEventListener("keydown", function(event) {
+var choiceC= document.getElementById("C");
 
+var choiceD= document.getElementById("D");
+
+var buttons = document.getElementsByClassName("4buttons");
+
+var choice1 = document.getElementById("choice1");
+
+var choice2 = document.getElementById("choice2");
+
+var choice3 = document.getElementById("choice3");
+
+var choice4 = document.getElementById("choice4");
+
+var CorFal = document.getElementById("CF");
+
+var ABCD = document.getElementsByClassName("ABCD");
+
+
+
+function question1() {
+    question.innerHTML = "";
+    choiceA.innerHTML = "";
+    choiceB.innerHTML = "";
+    choiceC.innerHTML = "";
+    choiceD.innerHTML = "";
+    
+    ABCD.addEventListener("click", function(event){
+        preventDefault(event);
+        if (event.currentTarget.id == "choice1"){
+            CorFal.innerHTML = "Correct!";
+
+            //add score to local storage change button style to permanent color onclick
+        } else {
+            CorFal.innerHTML = "False!";
+            //add score to local storage subtract time
+        };
 
     })
-}
+};
+
+function question2() {
+    question.innerHTML = "";
+    choiceA.innerHTML = "";
+    choiceB.innerHTML = "";
+    choiceC.innerHTML = "";
+    choiceD.innerHTML = "";
+
+    ABCD.addEventListener("click", function(event){
+        preventDefault(event);
+        if (event.currentTarget.id == "choice1"){
+            CorFal.innerHTML = "Correct!";
+
+            //add score to local storage change button style to permanent color onclick
+        } else {
+            CorFal.innerHTML = "False!";
+            //add score to local storage subtract time
+        };
+
+    })
+};
+
+function question3() {
+    question.innerHTML = "";
+    choiceA.innerHTML = "";
+    choiceB.innerHTML = "";
+    choiceC.innerHTML = "";
+    choiceD.innerHTML = "";
+
+    ABCD.addEventListener("click", function(event){
+        preventDefault(event);
+        if (event.currentTarget.id == "choice1"){
+            CorFal.innerHTML = "Correct!";
+
+            //add score to local storage change button style to permanent color onclick
+        } else {
+            CorFal.innerHTML = "False!";
+            //add score to local storage subtract time
+        };
+
+    })
+};
+
+function question4() {
+    question.innerHTML = "";
+    choiceA.innerHTML = "";
+    choiceB.innerHTML = "";
+    choiceC.innerHTML = "";
+    choiceD.innerHTML = "";
+
+    ABCD.addEventListener("click", function(event){
+        preventDefault(event);
+        if (event.currentTarget.id == "choice1"){
+            CorFal.innerHTML = "Correct!";
+
+            //add score to local storage change button style to permanent color onclick
+        } else {
+            CorFal.innerHTML = "False!";
+            //add score to local storage subtract time
+        };
+
+    })
+};
+
+function question5() {
+    question.innerHTML = "";
+    choiceA.innerHTML = "";
+    choiceB.innerHTML = "";
+    choiceC.innerHTML = "";
+    choiceD.innerHTML = "";
+
+    ABCD.addEventListener("click", function(event){
+        preventDefault(event);
+        if (event.currentTarget.id == "choice1"){
+            CorFal.innerHTML = "Correct!";
+
+            //add score to local storage change button style to permanent color onclick
+        } else {
+            CorFal.innerHTML = "False!";
+            //add score to local storage subtract time
+        };
+
+    })
+};
+
+function question6() {
+    question.innerHTML = "";
+    choiceA.innerHTML = "";
+    choiceB.innerHTML = "";
+    choiceC.innerHTML = "";
+    choiceD.innerHTML = "";
+
+    ABCD.addEventListener("click", function(event){
+        preventDefault(event);
+        if (event.currentTarget.id == "choice1"){
+            CorFal.innerHTML = "Correct!";
+
+            //add score to local storage change button style to permanent color onclick
+        } else {
+            CorFal.innerHTML = "False!";
+            //add score to local storage subtract time
+        };
+
+    })
+};
+
+function question7() {
+    question.innerHTML = "";
+    choiceA.innerHTML = "";
+    choiceB.innerHTML = "";
+    choiceC.innerHTML = "";
+    choiceD.innerHTML = "";
+
+    ABCD.addEventListener("click", function(event){
+        preventDefault(event);
+        if (event.currentTarget.id == "choice1"){
+            CorFal.innerHTML = "Correct!";
+
+            //add score to local storage change button style to permanent color onclick
+        } else {
+            CorFal.innerHTML = "False!";
+            //add score to local storage subtract time
+        };
+
+    })
+};
+
+function question8() {
+    question.innerHTML = "";
+    choiceA.innerHTML = "";
+    choiceB.innerHTML = "";
+    choiceC.innerHTML = "";
+    choiceD.innerHTML = "";
+
+    ABCD.addEventListener("click", function(event){
+        preventDefault(event);
+        if (event.currentTarget.id == "choice1"){
+            CorFal.innerHTML = "Correct!";
+
+            //add score to local storage change button style to permanent color onclick
+        } else {
+            CorFal.innerHTML = "False!";
+            //add score to local storage subtract time
+        };
+
+    })
+};
 /* stringify
 
 mathfloor math Random 
