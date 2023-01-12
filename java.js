@@ -57,11 +57,11 @@ function countdown(){
         if (seconds < 10) {
             timer.textContent = minutes + ':0' + seconds + ' Time Left';
         };
-        if (seconds < 1) {
+        if (seconds == 0) {
             timer.textContent = minutes + ':0' + seconds + ' Time Left';
             minutes--;
             seconds = 60;
-            if (minute == 0) {
+            if (minutes == -1) {
             clearInterval(timeinterval);
             scorepage();
         }
