@@ -35,8 +35,9 @@ var choicetextD = choiceD.childNodes[2];
 var score = {
     correct: 0,
     wrong: 0,
-}
-console.log(fbuttons);
+};
+
+console.log(score);
 
 
 question1();
@@ -52,16 +53,17 @@ function question1() {
 
         fbuttons[0].addEventListener("click", function(ev){
             ev.preventDefault();
-            ev.stopImmediatePropagation();
+            ev.stopPropagation();
             CorFal.innerHTML = "Correct";
-            score.correct++;
+            var addcor = score.correct++;
+            addcor.stopPropagation
             console.log(score);
         });
 
             //add score to local storage change button style to permanent color onclick
         fbuttons[1].addEventListener('click', function(event){
             event.preventDefault();
-            event.stopImmediatePropagation();
+            event.stopPropagation();
             score.wrong++;
             CorFal.innerHTML = "False";
         }
@@ -71,8 +73,9 @@ function question1() {
 
         fbuttons[2].addEventListener('click', function(event){
             event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
+            event.stopPropagation();
+            var addfal = score.wrong++;
+            addfal.stopPropagation;
             CorFal.innerHTML = "False";
             //add score to local storage subtract time
         });
@@ -86,7 +89,7 @@ function question1() {
         });
 
         next.addEventListener('click', function(ev){
-            ev.stopPropagation();
+            //ev.stopPropagation();
             ev.preventDefault();
             question2();
         });
@@ -114,6 +117,7 @@ function question2() {
     fbuttons[2].addEventListener("click", function(event){
         event.preventDefault();
         CorFal.innerHTML = "Correct";
+        event.stopPropagation();
         score.correct++;
         console.log(score);
     });
@@ -121,7 +125,7 @@ function question2() {
     fbuttons[0].addEventListener('click', function(event){
         event.preventDefault();
         CorFal.innerHTML = "False";
-        event.stopImmediatePropagation();
+        event.stopPropagation();
         score.wrong++;
     }
         ); 
@@ -131,14 +135,14 @@ function question2() {
     fbuttons[1].addEventListener('click', function(event){
         event.preventDefault();
         CorFal.innerHTML = "False";
-        event.stopImmediatePropagation();
+        //event.stopImmediatePropagation();
         score.wrong++;
         //add score to local storage subtract time
     });
 
     fbuttons[3].addEventListener('click', function(event){
         event.preventDefault();
-        event.stopImmediatePropagation();
+        //event.stopImmediatePropagation();
         score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
