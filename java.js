@@ -20,7 +20,7 @@ var choice4 = document.getElementById("choice4");
 
 var CorFal = document.getElementById("CF");
 
-var fbuttons = document.getElementsByClassName("fbuttons");
+var fbuttons = document.querySelectorAll(".fbuttons");
 
 var next = document.getElementById("next");
 
@@ -32,16 +32,21 @@ var choicetextB = choiceB.childNodes[2];
 var choicetextC = choiceC.childNodes[2];
 var choicetextD = choiceD.childNodes[2];
 
-
+var score = {
+    correct: 0,
+    wrong: 0,
+}
+console.log(fbuttons);
 
 question1();
 
 function question1() {
-    question.innerHTML += "";
+    question.innerHTML = "";
     choicetextA.nodeValue = "A";
     choicetextB.nodeValue = "g";
     choicetextC.nodeValue = "d";
     choicetextD.textContent = "d";
+    CorFal.innerHTML = "";
 
     next.addEventListener("click", function(event){
         event.preventDefault();
@@ -49,27 +54,45 @@ function question1() {
         question2();
     });
 
-    fbuttons.addEventListener("click", function(event){
-        if (event == choice1){
-            CorFal.innerHTML = "Correct!";
+    console.log(fbuttons);
+    console.log(score.correct);
+
+        fbuttons[0].addEventListener("click", function(event){
+            event.preventDefault();
+            CorFal.innerHTML = "Correct";
+            score.correct++
+            console.log(score);
+        });
 
             //add score to local storage change button style to permanent color onclick
-        } else {
-            CorFal.innerHTML = "False!";
+        fbuttons[1].addEventListener('click', function(event){
+            event.preventDefault();
+            CorFal.innerHTML = "False";
+        }
+            ); 
             //add score to local storage subtract time
-        };
+        
 
-    });
-   
+        fbuttons[2].addEventListener('click', function(event){
+            event.preventDefault();
+            CorFal.innerHTML = "False";
+            //add score to local storage subtract time
+        });
 
-};
+        fbuttons[3].addEventListener('click', function(event){
+            event.preventDefault();
+            CorFal.innerHTML = "False";
+            //add score to local storage subtract time
+        });
+    };
 
 function question2() {
-    question.innerHTML += "";
+    question.innerHTML = "";
     choicetextA.nodeValue = "B";
     choicetextB.nodeValue = "g";
     choicetextC.nodeValue = "d";
     choicetextD.textContent = "F";
+    CorFal.innerHTML = "";
 
     next.addEventListener("click", function(event){
         event.preventDefault();
@@ -81,20 +104,34 @@ function question2() {
         question1();
     });
 
-    ABCD.addEventListener("click", function(event){
+    fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
-        if (event.currentTarget.id == "choice1"){
-            CorFal.innerHTML = "Correct!";
-
-            //add score to local storage change button style to permanent color onclick
-        } else {
-            CorFal.innerHTML = "False!";
-            //add score to local storage subtract time
-        };
-
+        CorFal.innerHTML = "Correct";
+        score.correct++
+        console.log(score);
     });
 
-};
+    fbuttons[1].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+    }
+        ); 
+        //add score to local storage subtract time
+    
+
+    fbuttons[2].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
+    });
+
+    fbuttons[3].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
+    });
+
+    }
 
 function question3() {
     question.innerHTML += "";
@@ -102,6 +139,7 @@ function question3() {
     choicetextB.nodeValue = "g";
     choicetextC.nodeValue = "d";
     choicetextD.textContent = "F";
+    CorFal.innerHTML = "";
     next.addEventListener("click", function(event){
         event.preventDefault();
         question4();
@@ -113,17 +151,32 @@ function question3() {
     });
 
 
-    ABCD.addEventListener("click", function(event){
+    fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
-        if (event.currentTarget.id == "choice1"){
-            CorFal.innerHTML = "Correct!";
+        CorFal.innerHTML = "Correct";
+        score.correct++
+        console.log(score);
+    });
 
-            //add score to local storage change button style to permanent color onclick
-        } else {
-            CorFal.innerHTML = "False!";
-            //add score to local storage subtract time
-        };
+        //add score to local storage change button style to permanent color onclick
+    fbuttons[1].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+    }
+        ); 
+        //add score to local storage subtract time
+    
 
+    fbuttons[2].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
+    });
+
+    fbuttons[3].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
     });
 
 };
@@ -134,6 +187,7 @@ function question4() {
     choicetextB.nodeValue = "g";
     choicetextC.nodeValue = "d";
     choicetextD.textContent = "F";
+    CorFal.innerHTML = "";
 
     next.addEventListener("click", function(event){
         event.preventDefault();
@@ -146,18 +200,34 @@ function question4() {
     });
 
 
-    ABCD.addEventListener("click", function(event){
+    fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
-        if (event.currentTarget.id == "choice1"){
-            CorFal.innerHTML = "Correct!";
-
-            //add score to local storage change button style to permanent color onclick
-        } else {
-            CorFal.innerHTML = "False!";
-            //add score to local storage subtract time
-        };
-
+        CorFal.innerHTML = "Correct";
+        score.correct++
+        console.log(score);
     });
+
+        //add score to local storage change button style to permanent color onclick
+    fbuttons[1].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+    }
+        ); 
+        //add score to local storage subtract time
+    
+
+    fbuttons[2].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
+    });
+
+    fbuttons[3].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
+    });
+
 };
 
 function question5() {
@@ -166,6 +236,7 @@ function question5() {
     choicetextB.nodeValue = "g";
     choicetextC.nodeValue = "d";
     choicetextD.textContent = "F";
+    CorFal.innerHTML = "";
 
     next.addEventListener("click", function(event){
         event.preventDefault();
@@ -177,18 +248,35 @@ function question5() {
         question4();
     });
 
-    ABCD.addEventListener("click", function(event){
+
+    fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
-        if (event.currentTarget.id == "choice1"){
-            CorFal.innerHTML = "Correct!";
-
-            //add score to local storage change button style to permanent color onclick
-        } else {
-            CorFal.innerHTML = "False!";
-            //add score to local storage subtract time
-        };
-
+        CorFal.innerHTML = "Correct";
+        score.correct++
+        console.log(score);
     });
+
+        //add score to local storage change button style to permanent color onclick
+    fbuttons[1].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+    }
+        ); 
+        //add score to local storage subtract time
+    
+
+    fbuttons[2].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
+    });
+
+    fbuttons[3].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
+    });
+
 };
 
 function question6() {
@@ -197,6 +285,7 @@ function question6() {
     choicetextB.nodeValue = "g";
     choicetextC.nodeValue = "d";
     choicetextD.textContent = "F";
+    CorFal.innerHTML = "";
 
     next.addEventListener("click", function(event){
         event.preventDefault();
@@ -209,18 +298,34 @@ function question6() {
     });
 
 
-    ABCD.addEventListener("click", function(event){
+    fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
-        if (event.currentTarget.id == "choice1"){
-            CorFal.innerHTML = "Correct!";
-
-            //add score to local storage change button style to permanent color onclick
-        } else {
-            CorFal.innerHTML = "False!";
-            //add score to local storage subtract time
-        };
-
+        CorFal.innerHTML = "Correct";
+        score.correct++
+        console.log(score);
     });
+
+        //add score to local storage change button style to permanent color onclick
+    fbuttons[1].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+    }
+        ); 
+        //add score to local storage subtract time
+    
+
+    fbuttons[2].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
+    });
+
+    fbuttons[3].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
+    });
+
 };
 
 function question7() {
@@ -229,6 +334,7 @@ function question7() {
     choicetextB.nodeValue = "g";
     choicetextC.nodeValue = "d";
     choicetextD.textContent = "F";
+    CorFal.innerHTML = "";
 
     next.addEventListener("click", function(event){
         event.preventDefault();
@@ -240,17 +346,33 @@ function question7() {
         question6();
     });
 
-    ABCD.addEventListener("click", function(event){
+
+    fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
-        if (event.currentTarget.id == "choice1"){
-            CorFal.innerHTML = "Correct!";
+        CorFal.innerHTML = "Correct";
+        score.correct++
+        console.log(score);
+    });
 
-            //add score to local storage change button style to permanent color onclick
-        } else {
-            CorFal.innerHTML = "False!";
-            //add score to local storage subtract time
-        };
+        //add score to local storage change button style to permanent color onclick
+    fbuttons[1].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+    }
+        ); 
+        //add score to local storage subtract time
+    
 
+    fbuttons[2].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
+    });
+
+    fbuttons[3].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
     });
 };
 
@@ -260,25 +382,43 @@ function question8() {
     choicetextB.nodeValue = "g";
     choicetextC.nodeValue = "d";
     choicetextD.textContent = "F";
+    CorFal.innerHTML = "";
 
     previous.addEventListener("click", function(event){
         event.preventDefault();
         question7();
     });
 
-    ABCD.addEventListener("click", function(event){
+
+    fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
-        if (event.currentTarget.id == "choice1"){
-            CorFal.innerHTML = "Correct!";
-
-            //add score to local storage change button style to permanent color onclick
-        } else {
-            CorFal.innerHTML = "False!";
-            //add score to local storage subtract time
-        };
-
+        CorFal.innerHTML = "Correct";
+        score.correct++
+        console.log(score);
     });
-};
+
+        //add score to local storage change button style to permanent color onclick
+    fbuttons[1].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+    }
+        ); 
+        //add score to local storage subtract time
+    
+
+    fbuttons[2].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
+    });
+
+    fbuttons[3].addEventListener('click', function(event){
+        event.preventDefault();
+        CorFal.innerHTML = "False";
+        //add score to local storage subtract time
+    });
+
+    }
 /* stringify
 mathfloor math Random 
 for iteration 
