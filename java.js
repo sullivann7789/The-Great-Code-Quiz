@@ -38,29 +38,23 @@ var score = {
 }
 console.log(fbuttons);
 
+
 question1();
 
 function question1() {
-    question.innerHTML = "";
-    choicetextA.nodeValue = "A";
-    choicetextB.nodeValue = "g";
-    choicetextC.nodeValue = "d";
-    choicetextD.textContent = "d";
+
+    question.innerHTML = "What does JQuery do?";
+    choicetextA.nodeValue = "Allow code and syntax to become more compact and dynamic";
+    choicetextB.nodeValue = "Create an environment for hosting APIs";
+    choicetextC.nodeValue = "A Text file Structure to substitute HTML";
+    choicetextD.textContent = "A function in JavaScript syntax";
     CorFal.innerHTML = "";
 
-    next.addEventListener("click", function(event){
-        event.preventDefault();
-        
-        question2();
-    });
-
-    console.log(fbuttons);
-    console.log(score.correct);
-
-        fbuttons[0].addEventListener("click", function(event){
-            event.preventDefault();
+        fbuttons[0].addEventListener("click", function(ev){
+            ev.preventDefault();
+            ev.stopPropagation();
             CorFal.innerHTML = "Correct";
-            score.correct++
+            score.correct++;
             console.log(score);
         });
 
@@ -84,34 +78,41 @@ function question1() {
             CorFal.innerHTML = "False";
             //add score to local storage subtract time
         });
+
+        next.addEventListener('click', function(ev){
+            ev.stopPropagation();
+            ev.preventDefault();
+            question2();
+        });
+
+
     };
 
+
 function question2() {
-    question.innerHTML = "";
-    choicetextA.nodeValue = "B";
-    choicetextB.nodeValue = "g";
-    choicetextC.nodeValue = "d";
-    choicetextD.textContent = "F";
+
+    question.innerHTML = "What does the .nodeValue event handler do?";
+    choicetextA.nodeValue = "Provide the value of the parent element";
+    choicetextB.nodeValue = "Create a new Node";
+    choicetextC.nodeValue = "Provide the internal value of the element";
+    choicetextD.textContent = "Generate a random number value";
     CorFal.innerHTML = "";
 
-    next.addEventListener("click", function(event){
-        event.preventDefault();
-        question3();
-    });
+
 
     previous.addEventListener("click", function(event){
         event.preventDefault();
         question1();
     });
 
-    fbuttons[0].addEventListener("click", function(event){
+    fbuttons[2].addEventListener("click", function(event){
         event.preventDefault();
         CorFal.innerHTML = "Correct";
-        score.correct++
+        score.correct++;
         console.log(score);
     });
 
-    fbuttons[1].addEventListener('click', function(event){
+    fbuttons[0].addEventListener('click', function(event){
         event.preventDefault();
         CorFal.innerHTML = "False";
     }
@@ -119,7 +120,7 @@ function question2() {
         //add score to local storage subtract time
     
 
-    fbuttons[2].addEventListener('click', function(event){
+    fbuttons[1].addEventListener('click', function(event){
         event.preventDefault();
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
@@ -131,17 +132,26 @@ function question2() {
         //add score to local storage subtract time
     });
 
-    }
+    next.addEventListener('click', function(ev){
+        ev.stopPropagation();
+        ev.preventDefault();
+        question3();
+    });
+
+    };
 
 function question3() {
+
     question.innerHTML += "";
     choicetextA.nodeValue = "B";
     choicetextB.nodeValue = "g";
     choicetextC.nodeValue = "d";
     choicetextD.textContent = "F";
     CorFal.innerHTML = "";
-    next.addEventListener("click", function(event){
-        event.preventDefault();
+
+    next.addEventListener('click', function(ev){
+        ev.stopPropagation();
+        ev.preventDefault();
         question4();
     });
 
@@ -153,8 +163,8 @@ function question3() {
 
     fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
+        event.stopPropagation();
         CorFal.innerHTML = "Correct";
-        score.correct++
         console.log(score);
     });
 
@@ -189,8 +199,9 @@ function question4() {
     choicetextD.textContent = "F";
     CorFal.innerHTML = "";
 
-    next.addEventListener("click", function(event){
-        event.preventDefault();
+    next.addEventListener('click', function(ev){
+        ev.stopPropagation();
+        ev.preventDefault();
         question5();
     });
 
@@ -203,7 +214,6 @@ function question4() {
     fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
         CorFal.innerHTML = "Correct";
-        score.correct++
         console.log(score);
     });
 
@@ -238,8 +248,9 @@ function question5() {
     choicetextD.textContent = "F";
     CorFal.innerHTML = "";
 
-    next.addEventListener("click", function(event){
-        event.preventDefault();
+    next.addEventListener('click', function(ev){
+        ev.stopPropagation();
+        ev.preventDefault();
         question6();
     });
 
@@ -252,7 +263,6 @@ function question5() {
     fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
         CorFal.innerHTML = "Correct";
-        score.correct++
         console.log(score);
     });
 
@@ -287,9 +297,9 @@ function question6() {
     choicetextD.textContent = "F";
     CorFal.innerHTML = "";
 
-    next.addEventListener("click", function(event){
-        event.preventDefault();
-        question7();
+    next.addEventListener('click', function(ev){
+        ev.stopPropagation();
+        ev.preventDefault();
     });
 
     previous.addEventListener("click", function(event){
@@ -301,7 +311,6 @@ function question6() {
     fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
         CorFal.innerHTML = "Correct";
-        score.correct++
         console.log(score);
     });
 
@@ -336,9 +345,9 @@ function question7() {
     choicetextD.textContent = "F";
     CorFal.innerHTML = "";
 
-    next.addEventListener("click", function(event){
-        event.preventDefault();
-        question8();
+    next.addEventListener('click', function(ev){
+        ev.stopPropagation();
+        ev.preventDefault();
     });
 
     previous.addEventListener("click", function(event){
@@ -350,7 +359,6 @@ function question7() {
     fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
         CorFal.innerHTML = "Correct";
-        score.correct++
         console.log(score);
     });
 
@@ -384,8 +392,9 @@ function question8() {
     choicetextD.textContent = "F";
     CorFal.innerHTML = "";
 
-    previous.addEventListener("click", function(event){
-        event.preventDefault();
+    next.addEventListener('click', function(ev){
+        ev.stopPropagation();
+        ev.preventDefault();
         question7();
     });
 
@@ -393,7 +402,6 @@ function question8() {
     fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
         CorFal.innerHTML = "Correct";
-        score.correct++
         console.log(score);
     });
 
