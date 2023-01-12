@@ -52,7 +52,7 @@ function question1() {
 
         fbuttons[0].addEventListener("click", function(ev){
             ev.preventDefault();
-            ev.stopPropagation();
+            ev.stopImmediatePropagation();
             CorFal.innerHTML = "Correct";
             score.correct++;
             console.log(score);
@@ -61,6 +61,8 @@ function question1() {
             //add score to local storage change button style to permanent color onclick
         fbuttons[1].addEventListener('click', function(event){
             event.preventDefault();
+            event.stopImmediatePropagation();
+            score.wrong++;
             CorFal.innerHTML = "False";
         }
             ); 
@@ -69,12 +71,16 @@ function question1() {
 
         fbuttons[2].addEventListener('click', function(event){
             event.preventDefault();
+            event.stopImmediatePropagation();
+            score.wrong++;
             CorFal.innerHTML = "False";
             //add score to local storage subtract time
         });
 
         fbuttons[3].addEventListener('click', function(event){
             event.preventDefault();
+            event.stopImmediatePropagation();
+            score.wrong++;
             CorFal.innerHTML = "False";
             //add score to local storage subtract time
         });
@@ -115,6 +121,8 @@ function question2() {
     fbuttons[0].addEventListener('click', function(event){
         event.preventDefault();
         CorFal.innerHTML = "False";
+        event.stopImmediatePropagation();
+        score.wrong++;
     }
         ); 
         //add score to local storage subtract time
@@ -123,11 +131,15 @@ function question2() {
     fbuttons[1].addEventListener('click', function(event){
         event.preventDefault();
         CorFal.innerHTML = "False";
+        event.stopImmediatePropagation();
+        score.wrong++;
         //add score to local storage subtract time
     });
 
     fbuttons[3].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
@@ -163,7 +175,8 @@ function question3() {
 
     fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
-        event.stopPropagation();
+        event.stopImmediatePropagation();
+        score.correct++;
         CorFal.innerHTML = "Correct";
         console.log(score);
     });
@@ -171,6 +184,8 @@ function question3() {
         //add score to local storage change button style to permanent color onclick
     fbuttons[1].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
     }
         ); 
@@ -179,12 +194,16 @@ function question3() {
 
     fbuttons[2].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
 
     fbuttons[3].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
@@ -213,6 +232,8 @@ function question4() {
 
     fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.correct++;
         CorFal.innerHTML = "Correct";
         console.log(score);
     });
@@ -220,6 +241,8 @@ function question4() {
         //add score to local storage change button style to permanent color onclick
     fbuttons[1].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
     }
         ); 
@@ -228,12 +251,16 @@ function question4() {
 
     fbuttons[2].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
 
     fbuttons[3].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
@@ -262,6 +289,8 @@ function question5() {
 
     fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.correct++;
         CorFal.innerHTML = "Correct";
         console.log(score);
     });
@@ -269,6 +298,8 @@ function question5() {
         //add score to local storage change button style to permanent color onclick
     fbuttons[1].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
     }
         ); 
@@ -277,12 +308,16 @@ function question5() {
 
     fbuttons[2].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
 
     fbuttons[3].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
@@ -310,6 +345,8 @@ function question6() {
 
     fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.correct++;
         CorFal.innerHTML = "Correct";
         console.log(score);
     });
@@ -317,6 +354,8 @@ function question6() {
         //add score to local storage change button style to permanent color onclick
     fbuttons[1].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
     }
         ); 
@@ -325,12 +364,16 @@ function question6() {
 
     fbuttons[2].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
 
     fbuttons[3].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
@@ -358,6 +401,8 @@ function question7() {
 
     fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.correct++;
         CorFal.innerHTML = "Correct";
         console.log(score);
     });
@@ -365,6 +410,8 @@ function question7() {
         //add score to local storage change button style to permanent color onclick
     fbuttons[1].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
     }
         ); 
@@ -373,12 +420,16 @@ function question7() {
 
     fbuttons[2].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
 
     fbuttons[3].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
@@ -402,12 +453,16 @@ function question8() {
     fbuttons[0].addEventListener("click", function(event){
         event.preventDefault();
         CorFal.innerHTML = "Correct";
+        event.stopImmediatePropagation();
+        score.correct++;
         console.log(score);
     });
 
         //add score to local storage change button style to permanent color onclick
     fbuttons[1].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
     }
         ); 
@@ -416,12 +471,16 @@ function question8() {
 
     fbuttons[2].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
 
     fbuttons[3].addEventListener('click', function(event){
         event.preventDefault();
+        event.stopImmediatePropagation();
+        score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
     });
