@@ -26,6 +26,10 @@ var next = document.getElementById("next");
 
 var previous = document.getElementById("previous");
 
+var abcd = document.querySelectorAll("#ABCD");
+
+var timer = document.getElementById('timeleft');
+
 var choicetextA = choiceA.childNodes[2];
 
 var choicetextB = choiceB.childNodes[2];
@@ -40,7 +44,33 @@ var score = {
 console.log(score);
 
 
+function test() {
 
+function countdown(){
+    var minutes = 4;
+    var seconds = 59;
+
+    var timeinterval = setInterval(function() {
+        
+        timer.textContent = minutes + ':' + seconds + ' seconds remaining';
+        seconds--;
+        if (seconds == 00) {
+            
+            minutes--;
+            seconds == 59;
+            if (minute == 0) {
+            clearInterval(timeinterval);
+            scorepage();
+        }
+    }
+    }, 1000);
+};
+
+function scorepage() {
+    window.open('./indexlast.html');
+};
+
+countdown();
 
 function question1() {
 
@@ -107,9 +137,8 @@ function question1() {
 
         if (fbuttons[comchoice].addEventListener('click', correct)){
                 localStorage.setItem("score", score);
-        } else {
-
-        }};
+        } 
+    };
 
         //if (randominput.nodeValue != )
         /*fbuttons[comchoice].addEventListener('click', function(ev){
@@ -158,13 +187,13 @@ function question1() {
             score.wrong++;
             CorFal.innerHTML = "False";
             //add score to local storage subtract time
-        });
+        }); */
 
         next.addEventListener('click', function(ev){
-            //ev.stopPropagation();
+            ev.stopPropagation();
             ev.preventDefault();
             question2();
-        });*/
+        });
 
     };
 
@@ -413,6 +442,7 @@ function question6() {
     next.addEventListener('click', function(ev){
         ev.stopPropagation();
         ev.preventDefault();
+        question7();
     });
 
     previous.addEventListener("click", function(event){
@@ -469,6 +499,7 @@ function question7() {
     next.addEventListener('click', function(ev){
         ev.stopPropagation();
         ev.preventDefault();
+        question8();
     });
 
     previous.addEventListener("click", function(event){
@@ -563,6 +594,12 @@ function question8() {
         //add score to local storage subtract time
     });
 
+    next.addEventListener('click', function(ev){
+        ev.stopPropagation();
+        ev.preventDefault();
+        window.open('indexlast.html');
+    });
+
     }
 /* stringify
 mathfloor math Random 
@@ -580,4 +617,5 @@ create a function for each quiz question that contains:
 the new question
 the new choices
 the right answer in a randomly selected position
-*/
+*/}
+test();
