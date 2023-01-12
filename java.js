@@ -40,7 +40,7 @@ var score = {
 console.log(score);
 
 
-question1();
+
 
 function question1() {
 
@@ -72,6 +72,30 @@ function question1() {
     console.log(randominput);
     console.log(buttons[0].childNodes[2].nodeValue);
 
+    function increment(){
+        score.correct++;
+    };
+
+    function decrement(){
+        score.wrong++;
+    };
+
+    function correct(ev){
+        ev.preventDefault();
+        ev.stopPropagation;
+        CorFal.innerHTML = "Correct";
+        increment();
+        console.log(score);
+    }
+
+    function wrong(ev){
+        ev.preventDefault();
+        ev.stopPropagation;
+        CorFal.innerHTML = "False";
+        decrement();
+        console.log(score);
+    }
+
     for (let i = 1; i < buttons.length; i++) {
         var element = buttons[i];
         Math.floor(Math.random()* fbuttons.length) 
@@ -79,8 +103,13 @@ function question1() {
         randominput.nodeValue = answers1string[0];
         if(randominput.nodeValue != buttons[0].childNodes[2].nodeValue ) {
             buttons[0].childNodes[2].nodeValue = answers1string[comchoice];
-        }
-    }};
+        };
+
+        if (fbuttons[comchoice].addEventListener('click', correct)){
+                localStorage.setItem("score", score);
+        } else {
+
+        }};
 
         //if (randominput.nodeValue != )
         /*fbuttons[comchoice].addEventListener('click', function(ev){
@@ -137,7 +166,9 @@ function question1() {
             question2();
         });*/
 
+    };
 
+    question1();
     
 
 
