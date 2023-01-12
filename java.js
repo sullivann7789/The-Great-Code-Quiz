@@ -51,13 +51,16 @@ function countdown(){
     var seconds = 59;
 
     var timeinterval = setInterval(function() {
-        
-        timer.textContent = minutes + ':' + seconds + ' seconds remaining';
         seconds--;
-        if (seconds == 00) {
-            
+        timer.textContent = minutes + ':' + seconds + ' Time Left';
+        
+        if (seconds < 10) {
+            timer.textContent = minutes + ':0' + seconds + ' Time Left';
+        };
+        if (seconds < 1) {
+            timer.textContent = minutes + ':0' + seconds + ' Time Left';
             minutes--;
-            seconds == 59;
+            seconds = 60;
             if (minute == 0) {
             clearInterval(timeinterval);
             scorepage();
