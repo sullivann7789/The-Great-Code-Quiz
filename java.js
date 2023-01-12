@@ -8,7 +8,7 @@ var choiceC= document.getElementById("C");
 
 var choiceD= document.getElementById("D");
 
-var buttons = document.getElementsByClassName("4buttons");
+var buttons = document.getElementsByClassName("answer");
 
 var choice1 = document.getElementById("choice1");
 
@@ -45,13 +45,56 @@ question1();
 function question1() {
 
     question.innerHTML = "What does JQuery do?";
-    choicetextA.nodeValue = "Allow code and syntax to become more compact and dynamic";
+    /*choicetextA.nodeValue = "Allow code and syntax to become more compact and dynamic";
     choicetextB.nodeValue = "Create an environment for hosting APIs";
     choicetextC.nodeValue = "A Text file Structure to substitute HTML";
-    choicetextD.textContent = "A function in JavaScript syntax";
+    choicetextD.textContent = "A function in JavaScript syntax";*/
     CorFal.innerHTML = "";
 
-        fbuttons[0].addEventListener("click", function(ev){
+    var answers1 = {
+    q1a : "Allow code and syntax to become more compact and dynamic",
+    q1b : "Create an environment for hosting APIs",
+    q1c : "A Text file Structure to substitute HTML",
+    q1d : "A function in JavaScript syntax",
+    };
+    console.log(answers1);
+
+    var answers1string = Object.values(answers1);
+
+    console.log(answers1string[0]);
+
+    console.log(answers1string[3]);
+    var comchoice = Math.floor(Math.random()* buttons.length);
+    console.log(buttons[comchoice]);
+    var randomselection = buttons[comchoice];
+    var randominput = randomselection.childNodes[2];
+    
+    console.log(randominput);
+    console.log(buttons[0].childNodes[2].nodeValue);
+
+    for (let i = 1; i < buttons.length; i++) {
+        var element = buttons[i];
+        Math.floor(Math.random()* fbuttons.length) 
+        element.childNodes[2].nodeValue = answers1string[i];
+        randominput.nodeValue = answers1string[0];
+        if(randominput.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+            buttons[0].childNodes[2].nodeValue = answers1string[comchoice];
+        }
+    }};
+
+        //if (randominput.nodeValue != )
+        /*fbuttons[comchoice].addEventListener('click', function(ev){
+            ev.preventDefault();
+            ev.stopPropagation();
+            CorFal.innerHTML = "Correct";
+            var addcor = score.correct++;
+            addcor.stopPropagation
+            console.log(score);
+        })*/
+        
+
+
+        /*fbuttons[0].addEventListener("click", function(ev){
             ev.preventDefault();
             ev.stopPropagation();
             CorFal.innerHTML = "Correct";
@@ -63,7 +106,7 @@ function question1() {
             //add score to local storage change button style to permanent color onclick
         fbuttons[1].addEventListener('click', function(event){
             event.preventDefault();
-            event.stopPropagation();
+            event.stopImmediatePropagation();
             score.wrong++;
             CorFal.innerHTML = "False";
         }
@@ -73,7 +116,7 @@ function question1() {
 
         fbuttons[2].addEventListener('click', function(event){
             event.preventDefault();
-            event.stopPropagation();
+            event.stopImmediatePropagation();
             var addfal = score.wrong++;
             addfal.stopPropagation;
             CorFal.innerHTML = "False";
@@ -92,10 +135,10 @@ function question1() {
             //ev.stopPropagation();
             ev.preventDefault();
             question2();
-        });
+        });*/
 
 
-    };
+    
 
 
 function question2() {
@@ -117,7 +160,7 @@ function question2() {
     fbuttons[2].addEventListener("click", function(event){
         event.preventDefault();
         CorFal.innerHTML = "Correct";
-        event.stopPropagation();
+        event.stopImmediatePropagation();
         score.correct++;
         console.log(score);
     });
@@ -125,7 +168,7 @@ function question2() {
     fbuttons[0].addEventListener('click', function(event){
         event.preventDefault();
         CorFal.innerHTML = "False";
-        event.stopPropagation();
+        event.stopImmediatePropagation();
         score.wrong++;
     }
         ); 
@@ -135,14 +178,14 @@ function question2() {
     fbuttons[1].addEventListener('click', function(event){
         event.preventDefault();
         CorFal.innerHTML = "False";
-        //event.stopImmediatePropagation();
+        event.stopImmediatePropagation();
         score.wrong++;
         //add score to local storage subtract time
     });
 
     fbuttons[3].addEventListener('click', function(event){
         event.preventDefault();
-        //event.stopImmediatePropagation();
+        event.stopImmediatePropagation();
         score.wrong++;
         CorFal.innerHTML = "False";
         //add score to local storage subtract time
