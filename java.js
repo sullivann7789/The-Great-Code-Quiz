@@ -154,11 +154,11 @@ function question2() {
 
 function question3() {
 
-    question.innerHTML += "";
-    choicetextA.nodeValue = "B";
-    choicetextB.nodeValue = "g";
-    choicetextC.nodeValue = "d";
-    choicetextD.textContent = "F";
+    question.innerHTML = "What is the purpose of event handler .addEventListener('keydown',function())?";
+    choicetextA.nodeValue = "Provides which key is being pressed on";
+    choicetextB.nodeValue = "Lists the musical key of your favorite rap song";
+    choicetextC.nodeValue = "Provides an event after a key has been pressed on";
+    choicetextD.textContent = "Provides an event when a key is being pressed on ";
     CorFal.innerHTML = "";
 
     next.addEventListener('click', function(ev){
@@ -173,7 +173,7 @@ function question3() {
     });
 
 
-    fbuttons[0].addEventListener("click", function(event){
+    fbuttons[3].addEventListener("click", function(event){
         event.preventDefault();
         event.stopImmediatePropagation();
         score.correct++;
@@ -200,7 +200,7 @@ function question3() {
         //add score to local storage subtract time
     });
 
-    fbuttons[3].addEventListener('click', function(event){
+    fbuttons[0].addEventListener('click', function(event){
         event.preventDefault();
         event.stopImmediatePropagation();
         score.wrong++;
@@ -211,11 +211,11 @@ function question3() {
 };
 
 function question4() {
-    question.innerHTML += "";
-    choicetextA.nodeValue = "B";
-    choicetextB.nodeValue = "g";
-    choicetextC.nodeValue = "d";
-    choicetextD.textContent = "F";
+    question.innerHTML = "What HTML element do you use if you want to create a clickable link?";
+    choicetextA.nodeValue = "<src>";
+    choicetextB.nodeValue = "<href=''>";
+    choicetextC.nodeValue = "<a href=''>";
+    choicetextD.textContent = "<script>";
     CorFal.innerHTML = "";
 
     next.addEventListener('click', function(ev){
@@ -230,7 +230,7 @@ function question4() {
     });
 
 
-    fbuttons[0].addEventListener("click", function(event){
+    fbuttons[2].addEventListener("click", function(event){
         event.preventDefault();
         event.stopImmediatePropagation();
         score.correct++;
@@ -249,7 +249,7 @@ function question4() {
         //add score to local storage subtract time
     
 
-    fbuttons[2].addEventListener('click', function(event){
+    fbuttons[0].addEventListener('click', function(event){
         event.preventDefault();
         event.stopImmediatePropagation();
         score.wrong++;
@@ -268,11 +268,11 @@ function question4() {
 };
 
 function question5() {
-    question.innerHTML += "";
-    choicetextA.nodeValue = "B";
-    choicetextB.nodeValue = "g";
-    choicetextC.nodeValue = "d";
-    choicetextD.textContent = "F";
+    question.innerHTML = "How do you add an element, or code structure (such as text), to another HTML element using JS?";
+    choicetextA.nodeValue = ".add";
+    choicetextB.nodeValue = ".append or .appendChild";
+    choicetextC.nodeValue = ".createElement";
+    choicetextD.textContent = ".textContent";
     CorFal.innerHTML = "";
 
     next.addEventListener('click', function(ev){
@@ -287,7 +287,7 @@ function question5() {
     });
 
 
-    fbuttons[0].addEventListener("click", function(event){
+    fbuttons[1].addEventListener("click", function(event){
         event.preventDefault();
         event.stopImmediatePropagation();
         score.correct++;
@@ -296,7 +296,7 @@ function question5() {
     });
 
         //add score to local storage change button style to permanent color onclick
-    fbuttons[1].addEventListener('click', function(event){
+    fbuttons[0].addEventListener('click', function(event){
         event.preventDefault();
         event.stopImmediatePropagation();
         score.wrong++;
@@ -325,11 +325,11 @@ function question5() {
 };
 
 function question6() {
-    question.innerHTML += "";
-    choicetextA.nodeValue = "B";
-    choicetextB.nodeValue = "g";
-    choicetextC.nodeValue = "d";
-    choicetextD.textContent = "F";
+    question.innerHTML = "How do you convert text into a JavaScript object using JavaScript?";
+    choicetextA.nodeValue = "var x = 'text'; ";
+    choicetextB.nodeValue = "document.getElementByID";
+    choicetextC.nodeValue = "item.innerHTML = ";
+    choicetextD.textContent = "JSON.parse()";
     CorFal.innerHTML = "";
 
     next.addEventListener('click', function(ev){
@@ -343,7 +343,7 @@ function question6() {
     });
 
 
-    fbuttons[0].addEventListener("click", function(event){
+    fbuttons[3].addEventListener("click", function(event){
         event.preventDefault();
         event.stopImmediatePropagation();
         score.correct++;
@@ -370,7 +370,7 @@ function question6() {
         //add score to local storage subtract time
     });
 
-    fbuttons[3].addEventListener('click', function(event){
+    fbuttons[0].addEventListener('click', function(event){
         event.preventDefault();
         event.stopImmediatePropagation();
         score.wrong++;
@@ -381,11 +381,11 @@ function question6() {
 };
 
 function question7() {
-    question.innerHTML += "";
-    choicetextA.nodeValue = "B";
-    choicetextB.nodeValue = "g";
-    choicetextC.nodeValue = "d";
-    choicetextD.textContent = "F";
+    question.innerHTML = "How do you store an object in storage?";
+    choicetextA.nodeValue = "console.log(object)";
+    choicetextB.nodeValue = "localStorage.setItem()";
+    choicetextC.nodeValue = "localStorage.log()";
+    choicetextD.textContent = "localStorage.console.log(object)";
     CorFal.innerHTML = "";
 
     next.addEventListener('click', function(ev){
@@ -399,7 +399,7 @@ function question7() {
     });
 
 
-    fbuttons[0].addEventListener("click", function(event){
+    fbuttons[1].addEventListener("click", function(event){
         event.preventDefault();
         event.stopImmediatePropagation();
         score.correct++;
@@ -408,7 +408,7 @@ function question7() {
     });
 
         //add score to local storage change button style to permanent color onclick
-    fbuttons[1].addEventListener('click', function(event){
+    fbuttons[0].addEventListener('click', function(event){
         event.preventDefault();
         event.stopImmediatePropagation();
         score.wrong++;
@@ -436,11 +436,11 @@ function question7() {
 };
 
 function question8() {
-    question.innerHTML += "";
-    choicetextA.nodeValue = "B";
-    choicetextB.nodeValue = "g";
-    choicetextC.nodeValue = "d";
-    choicetextD.textContent = "F";
+    question.innerHTML = "how do you convert an object into a string";
+    choicetextA.nodeValue = "JSON.stringify(object)";
+    choicetextB.nodeValue = "object.string";
+    choicetextC.nodeValue = "object.trim";
+    choicetextD.textContent = "stringify(object)";
     CorFal.innerHTML = "";
 
     next.addEventListener('click', function(ev){
