@@ -60,7 +60,7 @@ function test() {
 
     function correct(ev){
         ev.preventDefault();
-        ev.stopPropagation;
+        ev.stopPropagation();
         CorFal.innerHTML = "Correct";
         increment();
         console.log(score);
@@ -68,7 +68,7 @@ function test() {
 
     function wrong(ev){
         ev.preventDefault();
-        ev.stopPropagation;
+        ev.stopPropagation();
         CorFal.innerHTML = "False";
         decrement();
         console.log(score);
@@ -226,12 +226,58 @@ function test() {
     function question2() {
 
         question.innerHTML = "What does the .nodeValue event handler do?";
-        choicetextA.nodeValue = "Provide the value of the parent element";
-        choicetextB.nodeValue = "Create a new Node";
-        choicetextC.nodeValue = "Provide the internal value of the element";
-        choicetextD.textContent = "Generate a random number value";
         CorFal.innerHTML = "";
-
+        var answers2 = {
+            q1a : "Provide the internal value of the element",
+            q1b : "Create a new Node",
+            q1c : "Provide the value of the parent element",
+            q1d : "Generate a random number value",
+            };
+            console.log(answers2);
+    
+            var answers2string = Object.values(answers2);
+    
+            console.log(answers2string[0]);
+    
+            console.log(answers2string[3]);
+            var comchoice2 = Math.floor(Math.random()* buttons.length);
+            console.log(buttons[comchoice2]);
+            var randomselection2 = buttons[comchoice2];
+            var randominput2 = randomselection2.childNodes[2];
+            
+            console.log(randominput2);
+            console.log(buttons[0].childNodes[2].nodeValue);
+    
+    
+    
+            for (let i = 1; i < buttons.length; i++) {
+                var element = buttons[i];
+                Math.floor(Math.random()* fbuttons.length) 
+                element.childNodes[2].nodeValue = answers2string[i];
+                randominput2.nodeValue = answers2string[0];
+                if(randominput2.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+                    buttons[0].childNodes[2].nodeValue = answers2string[comchoice2];
+                };
+                specify();
+                if (fbuttons[comchoice2].addEventListener('click', correct)){
+                        score.wrong--;
+                        console.log(score);
+                        localStorage.setItem("score", score);
+                }
+    
+                console.log(fbuttons);
+                
+                
+                function specify() {
+                    for (let i = 0; i < fbuttons.length; i++) {
+                        const element = fbuttons[i];
+                        element.addEventListener('click', wrong)
+                        
+                        };
+                        
+                    };
+                }
+    
 
 
         previous.addEventListener("click", function(event){
@@ -239,7 +285,7 @@ function test() {
             question1();
         });
 
-        fbuttons[2].addEventListener("click", function(event){
+       /*  fbuttons[2].addEventListener("click", function(event){
             event.preventDefault();
             CorFal.innerHTML = "Correct";
             event.stopImmediatePropagation();
@@ -271,7 +317,7 @@ function test() {
             score.wrong++;
             CorFal.innerHTML = "False";
             //add score to local storage subtract time
-        });
+        });*/
 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
@@ -284,11 +330,58 @@ function test() {
     function question3() {
 
         question.innerHTML = "What is the purpose of event handler .addEventListener('keydown',function())?";
-        choicetextA.nodeValue = "Provides which key is being pressed on";
-        choicetextB.nodeValue = "Lists the musical key of your favorite rap song";
-        choicetextC.nodeValue = "Provides an event after a key has been pressed on";
-        choicetextD.textContent = "Provides an event when a key is being pressed on ";
         CorFal.innerHTML = "";
+
+        var answers3 = {
+            q1a : "Provides an event when a key is being pressed on ",
+            q1b : "Lists the musical key of your favorite rap song",
+            q1c : "Provides an event after a key has been pressed on",
+            q1d : "Provides which key is being pressed on",
+            };
+            console.log(answers3);
+    
+            var answers3string = Object.values(answers3);
+    
+            console.log(answers3string[0]);
+    
+            console.log(answers3string[3]);
+            var comchoice3 = Math.floor(Math.random()* buttons.length);
+            console.log(buttons[comchoice3]);
+            var randomselection3 = buttons[comchoice3];
+            var randominput3 = randomselection3.childNodes[2];
+            
+            console.log(randominput3);
+            console.log(buttons[0].childNodes[2].nodeValue);
+    
+    
+    
+            for (let i = 1; i < buttons.length; i++) {
+                var element = buttons[i];
+                Math.floor(Math.random()* fbuttons.length) 
+                element.childNodes[2].nodeValue = answers3string[i];
+                randominput3.nodeValue = answers3string[0];
+                if(randominput3.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+                    buttons[0].childNodes[2].nodeValue = answers3string[comchoice3];
+                };
+                specify();
+                if (fbuttons[comchoice3].addEventListener('click', correct)){
+                        score.wrong--;
+                        console.log(score);
+                        localStorage.setItem("score", score);
+                }
+    
+                console.log(fbuttons);
+                
+                
+                function specify() {
+                    for (let i = 0; i < fbuttons.length; i++) {
+                        const element = fbuttons[i];
+                        element.addEventListener('click', wrong)
+                        
+                        };
+                        
+                    };
+                }
 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
@@ -302,7 +395,7 @@ function test() {
         });
 
 
-        fbuttons[3].addEventListener("click", function(event){
+        /*fbuttons[3].addEventListener("click", function(event){
             event.preventDefault();
             event.stopImmediatePropagation();
             score.correct++;
@@ -335,18 +428,63 @@ function test() {
             score.wrong++;
             CorFal.innerHTML = "False";
             //add score to local storage subtract time
-        });
+        });*/
 
     };
 
     function question4() {
         question.innerHTML = "What HTML element do you use if you want to create a clickable link?";
-        choicetextA.nodeValue = "<src>";
-        choicetextB.nodeValue = "<href=''>";
-        choicetextC.nodeValue = "<a href=''>";
-        choicetextD.textContent = "<script>";
         CorFal.innerHTML = "";
-
+        var answers4 = {
+            q1a : "<a href=''>",
+            q1b : "<href=''>",
+            q1c : "<src>",
+            q1d : "<script>"
+            };
+            console.log(answers4);
+    
+            var answers4string = Object.values(answers4);
+    
+            console.log(answers4string[0]);
+    
+            console.log(answers4string[3]);
+            var comchoice4 = Math.floor(Math.random()* buttons.length);
+            console.log(buttons[comchoice4]);
+            var randomselection4 = buttons[comchoice4];
+            var randominput4 = randomselection4.childNodes[2];
+            
+            console.log(randominput4);
+            console.log(buttons[0].childNodes[2].nodeValue);
+    
+    
+    
+            for (let i = 1; i < buttons.length; i++) {
+                var element = buttons[i];
+                Math.floor(Math.random()* fbuttons.length) 
+                element.childNodes[2].nodeValue = answers4string[i];
+                randominput4.nodeValue = answers4string[0];
+                if(randominput4.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+                    buttons[0].childNodes[2].nodeValue = answers4string[comchoice4];
+                };
+                specify();
+                if (fbuttons[comchoice4].addEventListener('click', correct)){
+                        score.wrong--;
+                        console.log(score);
+                        localStorage.setItem("score", score);
+                }
+    
+                console.log(fbuttons);
+                
+                
+                function specify() {
+                    for (let i = 0; i < fbuttons.length; i++) {
+                        const element = fbuttons[i];
+                        element.addEventListener('click', wrong)
+                        
+                        };
+                        
+                    };
+                }
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
@@ -359,7 +497,7 @@ function test() {
         });
 
 
-        fbuttons[2].addEventListener("click", function(event){
+        /*fbuttons[2].addEventListener("click", function(event){
             event.preventDefault();
             event.stopImmediatePropagation();
             score.correct++;
@@ -392,17 +530,63 @@ function test() {
             score.wrong++;
             CorFal.innerHTML = "False";
             //add score to local storage subtract time
-        });
+        });*/
 
     };
 
     function question5() {
         question.innerHTML = "How do you add an element, or code structure (such as text), to another HTML element using JS?";
-        choicetextA.nodeValue = ".add";
-        choicetextB.nodeValue = ".append or .appendChild";
-        choicetextC.nodeValue = ".createElement";
-        choicetextD.textContent = ".textContent";
         CorFal.innerHTML = "";
+        var answers5 = {
+            q1a : ".append or .appendChild",
+            q1b : ".add",
+            q1c : ".createElement",
+            q1d : ".textContent"
+            };
+            console.log(answers5);
+    
+            var answers5string = Object.values(answers5);
+    
+            console.log(answers5string[0]);
+    
+            console.log(answers5string[3]);
+            var comchoice5 = Math.floor(Math.random()* buttons.length);
+            console.log(buttons[comchoice5]);
+            var randomselection5 = buttons[comchoice5];
+            var randominput5 = randomselection5.childNodes[2];
+            
+            console.log(randominput5);
+            console.log(buttons[0].childNodes[2].nodeValue);
+    
+    
+    
+            for (let i = 1; i < buttons.length; i++) {
+                var element = buttons[i];
+                Math.floor(Math.random()* fbuttons.length) 
+                element.childNodes[2].nodeValue = answers5string[i];
+                randominput5.nodeValue = answers5string[0];
+                if(randominput5.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+                    buttons[0].childNodes[2].nodeValue = answers5string[comchoice5];
+                };
+                specify();
+                if (fbuttons[comchoice5].addEventListener('click', correct)){
+                        score.wrong--;
+                        console.log(score);
+                        localStorage.setItem("score", score);
+                }
+    
+                console.log(fbuttons);
+                
+                
+                function specify() {
+                    for (let i = 0; i < fbuttons.length; i++) {
+                        const element = fbuttons[i];
+                        element.addEventListener('click', wrong)
+                        
+                        };
+                        
+                    };
+                }
 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
@@ -416,7 +600,7 @@ function test() {
         });
 
 
-        fbuttons[1].addEventListener("click", function(event){
+        /*fbuttons[1].addEventListener("click", function(event){
             event.preventDefault();
             event.stopImmediatePropagation();
             score.correct++;
@@ -449,16 +633,16 @@ function test() {
             score.wrong++;
             CorFal.innerHTML = "False";
             //add score to local storage subtract time
-        });
+        });*/
 
     };
 
     function question6() {
         question.innerHTML = "How do you convert text into a JavaScript object using JavaScript?";
-        choicetextA.nodeValue = "var x = 'text'; ";
-        choicetextB.nodeValue = "document.getElementByID";
-        choicetextC.nodeValue = "item.innerHTML = ";
-        choicetextD.textContent = "JSON.parse()";
+        choicetextA.nodeValue = "JSON.parse()",
+        choicetextB.nodeValue = "document.getElementByID",
+        choicetextC.nodeValue = "item.innerHTML = ",
+        choicetextD.textContent = "var x = 'text'; ",
         CorFal.innerHTML = "";
 
         next.addEventListener('click', function(ev){
