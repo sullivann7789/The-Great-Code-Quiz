@@ -873,6 +873,8 @@ function test() {
             question7();
         });
 
+        next.innerHTML = "Submit";
+
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
