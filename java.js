@@ -639,11 +639,59 @@ function test() {
 
     function question6() {
         question.innerHTML = "How do you convert text into a JavaScript object using JavaScript?";
-        choicetextA.nodeValue = "JSON.parse()",
-        choicetextB.nodeValue = "document.getElementByID",
-        choicetextC.nodeValue = "item.innerHTML = ",
-        choicetextD.textContent = "var x = 'text'; ",
         CorFal.innerHTML = "";
+
+        var answers6 = {
+            q1a : "JSON.parse()",
+            q1b : "document.getElementByID",
+            q1c : "item.innerHTML = ",
+            q1d : "var x = 'text'; ",
+            };
+
+        console.log(answers6);
+    
+        var answers6string = Object.values(answers6);
+
+        console.log(answers6string[0]);
+
+        console.log(answers6string[3]);
+        var comchoice6 = Math.floor(Math.random()* buttons.length);
+        console.log(buttons[comchoice6]);
+        var randomselection6 = buttons[comchoice6];
+        var randominput6 = randomselection6.childNodes[2];
+        
+        console.log(randominput6);
+        console.log(buttons[0].childNodes[2].nodeValue);
+
+
+
+        for (let i = 1; i < buttons.length; i++) {
+            var element = buttons[i];
+            Math.floor(Math.random()* fbuttons.length) 
+            element.childNodes[2].nodeValue = answers6string[i];
+            randominput6.nodeValue = answers6string[0];
+            if(randominput6.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+                buttons[0].childNodes[2].nodeValue = answers6string[comchoice6];
+            };
+            specify();
+            if (fbuttons[comchoice6].addEventListener('click', correct)){
+                    score.wrong--;
+                    console.log(score);
+                    localStorage.setItem("score", score);
+            }
+
+            console.log(fbuttons);
+            
+            
+            function specify() {
+                for (let i = 0; i < fbuttons.length; i++) {
+                    const element = fbuttons[i];
+                    element.addEventListener('click', wrong)
+                    
+                    };
+                    
+                };
+            }
 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
@@ -657,7 +705,7 @@ function test() {
         });
 
 
-        fbuttons[3].addEventListener("click", function(event){
+       /* fbuttons[3].addEventListener("click", function(event){
             event.preventDefault();
             event.stopImmediatePropagation();
             score.correct++;
@@ -690,17 +738,65 @@ function test() {
             score.wrong++;
             CorFal.innerHTML = "False";
             //add score to local storage subtract time
-        });
+        }); */
 
     };
 
     function question7() {
         question.innerHTML = "How do you store an object in storage?";
-        choicetextA.nodeValue = "console.log(object)";
-        choicetextB.nodeValue = "localStorage.setItem()";
-        choicetextC.nodeValue = "localStorage.log()";
-        choicetextD.textContent = "localStorage.console.log(object)";
         CorFal.innerHTML = "";
+
+        var answers7 = {
+            q1a : "localStorage.setItem()",
+            q1b : "console.log(object)",
+            q1c : "localStorage.log()",
+            q1d : "localStorage.console.log(object)",
+            };
+
+        console.log(answers7);
+    
+        var answers7string = Object.values(answers7);
+
+        console.log(answers7string[0]);
+
+        console.log(answers7string[3]);
+        var comchoice7 = Math.floor(Math.random()* buttons.length);
+        console.log(buttons[comchoice7]);
+        var randomselection7 = buttons[comchoice7];
+        var randominput7 = randomselection7.childNodes[2];
+        
+        console.log(randominput7);
+        console.log(buttons[0].childNodes[2].nodeValue);
+
+
+
+        for (let i = 1; i < buttons.length; i++) {
+            var element = buttons[i];
+            Math.floor(Math.random()* fbuttons.length) 
+            element.childNodes[2].nodeValue = answers7string[i];
+            randominput7.nodeValue = answers7string[0];
+            if(randominput7.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+                buttons[0].childNodes[2].nodeValue = answers7string[comchoice7];
+            };
+            specify();
+            if (fbuttons[comchoice7].addEventListener('click', correct)){
+                    score.wrong--;
+                    console.log(score);
+                    localStorage.setItem("score", score);
+            }
+
+            console.log(fbuttons);
+            
+            
+            function specify() {
+                for (let i = 0; i < fbuttons.length; i++) {
+                    const element = fbuttons[i];
+                    element.addEventListener('click', wrong)
+                    
+                    };
+                    
+                };
+            }
 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
@@ -713,91 +809,68 @@ function test() {
             question6();
         });
 
-
-        fbuttons[1].addEventListener("click", function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.correct++;
-            CorFal.innerHTML = "Correct";
-            console.log(score);
-        });
-
-            //add score to local storage change button style to permanent color onclick
-        fbuttons[0].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-        }
-            ); 
-            //add score to local storage subtract time
-        
-
-        fbuttons[2].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
-        });
-
-        fbuttons[3].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
-        });
     };
 
     function question8() {
         question.innerHTML = "how do you convert an object into a string";
-        choicetextA.nodeValue = "JSON.stringify(object)";
-        choicetextB.nodeValue = "object.string";
-        choicetextC.nodeValue = "object.trim";
-        choicetextD.textContent = "stringify(object)";
         CorFal.innerHTML = "";
 
-        next.addEventListener('click', function(ev){
+        var answers8 = {
+            q1a : "JSON.stringify(object)",
+            q1b : "object.string",
+            q1c : "object.trim",
+            q1d : "stringify(object)",
+            };
+
+        console.log(answers8);
+    
+        var answers8string = Object.values(answers8);
+
+        console.log(answers8string[0]);
+
+        console.log(answers8string[3]);
+        var comchoice8 = Math.floor(Math.random()* buttons.length);
+        console.log(buttons[comchoice8]);
+        var randomselection8 = buttons[comchoice8];
+        var randominput8 = randomselection8.childNodes[2];
+        
+        console.log(randominput8);
+        console.log(buttons[0].childNodes[2].nodeValue);
+
+
+
+        for (let i = 1; i < buttons.length; i++) {
+            var element = buttons[i];
+            Math.floor(Math.random()* fbuttons.length) 
+            element.childNodes[2].nodeValue = answers8string[i];
+            randominput8.nodeValue = answers8string[0];
+            if(randominput8.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+                buttons[0].childNodes[2].nodeValue = answers8string[comchoice8];
+            };
+            specify();
+            if (fbuttons[comchoice8].addEventListener('click', correct)){
+                    score.wrong--;
+                    console.log(score);
+                    localStorage.setItem("score", score);
+            }
+
+            console.log(fbuttons);
+            
+            
+            function specify() {
+                for (let i = 0; i < fbuttons.length; i++) {
+                    const element = fbuttons[i];
+                    element.addEventListener('click', wrong)
+                    
+                    };
+                    
+                };
+            }
+
+        previous.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
             question7();
-        });
-
-
-        fbuttons[0].addEventListener("click", function(event){
-            event.preventDefault();
-            CorFal.innerHTML = "Correct";
-            event.stopImmediatePropagation();
-            score.correct++;
-            console.log(score);
-        });
-
-            //add score to local storage change button style to permanent color onclick
-        fbuttons[1].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-        }
-            ); 
-            //add score to local storage subtract time
-        
-
-        fbuttons[2].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
-        });
-
-        fbuttons[3].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
         });
 
         next.addEventListener('click', function(ev){
