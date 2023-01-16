@@ -50,27 +50,36 @@ function test() {
     var seconds = 60;
 
 
-    function increment(){
+    let increment = function() {
         score.correct++;
     };
 
-    function decrement(){
+    let decrement = function() {
         score.wrong++;
     };
 
     function correct(ev){
-        ev.preventDefault();
         ev.stopPropagation();
         CorFal.innerHTML = "Correct";
         increment();
         console.log(score);
     }
 
+    function minustime () {
+        if (seconds >= 30) {
+            seconds = seconds-30;
+        } else if (seconds < 30) {
+            Tvalue1 = 30 - seconds;
+            seconds = 60 - Tvalue1;
+            minutes--;
+        }
+    }
     function wrong(ev){
-        ev.preventDefault();
         ev.stopPropagation();
         CorFal.innerHTML = "False";
         decrement();
+        minustime();
+        window.alert('30 Seconds Lost!');
         console.log(score);
     }
 
@@ -125,7 +134,7 @@ function test() {
         var randominput = randomselection.childNodes[2];
 
 
-
+        function generate() {
         for (let i = 1; i < buttons.length; i++) {
             var element = buttons[i];
             Math.floor(Math.random()* fbuttons.length) 
@@ -134,76 +143,30 @@ function test() {
             if(randominput.nodeValue != buttons[0].childNodes[2].nodeValue ) {
                 buttons[0].childNodes[2].nodeValue = answers1string[comchoice];
             };
-            specify();
-            if (fbuttons[comchoice].addEventListener('click', correct)){
-                    score.wrong--;
-                    console.log(score);
-                    localStorage.setItem("score", score);
-            }
-            
-            
             function specify() {
                 for (let i = 0; i < fbuttons.length; i++) {
-                    const element = fbuttons[i];
-                    element.addEventListener('click', wrong)
+                    const element = buttons[i];
+                    if (element == buttons[comchoice]){
+                        element.addEventListener('click', correct, {once:true});
+                        wrong = function(cancel) {
+                            cancel.preventDefault();
+                        };
+                        console.log(score);
+                        localStorage.setItem("score", score.correct);
+                    } else if (element !== buttons[comchoice]){
+                        element.addEventListener('click', wrong, {once:true});
+                    };
                     
                     };
                     
                 };
-            }
+            specify();
+        }
+        };
+            generate();
 
-
-            //if (randominput.nodeValue != )
-            /*fbuttons[comchoice].addEventListener('click', function(ev){
-                ev.preventDefault();
-                ev.stopPropagation();
-                CorFal.innerHTML = "Correct";
-                var addcor = score.correct++;
-                addcor.stopPropagation
-                console.log(score);
-            })*/
-            
-
-
-            /*fbuttons[0].addEventListener("click", function(ev){
-                ev.preventDefault();
-                ev.stopPropagation();
-                CorFal.innerHTML = "Correct";
-                var addcor = score.correct++;
-                addcor.stopPropagation
-                console.log(score);
-            });
-
-                //add score to local storage change button style to permanent color onclick
-            fbuttons[1].addEventListener('click', function(event){
-                event.preventDefault();
-                event.stopImmediatePropagation();
-                score.wrong++;
-                CorFal.innerHTML = "False";
-            }
-                ); 
-                //add score to local storage subtract time
-            
-
-            fbuttons[2].addEventListener('click', function(event){
-                event.preventDefault();
-                event.stopImmediatePropagation();
-                var addfal = score.wrong++;
-                addfal.stopPropagation;
-                CorFal.innerHTML = "False";
-                //add score to local storage subtract time
-            });
-
-            fbuttons[3].addEventListener('click', function(event){
-                event.preventDefault();
-                event.stopImmediatePropagation();
-                score.wrong++;
-                CorFal.innerHTML = "False";
-                //add score to local storage subtract time
-            }); */
 
             next.addEventListener('click', function(ev){
-                ev.stopPropagation();
                 ev.preventDefault();
                 question2();
             });
@@ -228,7 +191,8 @@ function test() {
             var comchoice2 = Math.floor(Math.random()* buttons.length);
             var randomselection2 = buttons[comchoice2];
             var randominput2 = randomselection2.childNodes[2];
-    
+
+            function generate2() {
             for (let i = 1; i < buttons.length; i++) {
                 var element = buttons[i];
                 Math.floor(Math.random()* fbuttons.length) 
@@ -237,22 +201,25 @@ function test() {
                 if(randominput2.nodeValue != buttons[0].childNodes[2].nodeValue ) {
                     buttons[0].childNodes[2].nodeValue = answers2string[comchoice2];
                 };
-                specify();
-                if (fbuttons[comchoice2].addEventListener('click', correct)){
-                        score.wrong--;
-                        console.log(score);
-                        localStorage.setItem("score", score);
-                }
-                
-                function specify() {
+                function specify2() {
                     for (let i = 0; i < fbuttons.length; i++) {
-                        const element = fbuttons[i];
-                        element.addEventListener('click', wrong)
+                        const cliff = buttons[i];
+                        if (cliff == buttons[comchoice2]){
+                            cliff.addEventListener('click', correct, {once:true})
+                            console.log(score);
+                            localStorage.setItem("score", score.correct);
+                        } else if (cliff !== buttons[comchoice2]){
+                            cliff.addEventListener('click', wrong, {once:true});
+                        };
                         
                         };
                         
                     };
+                specify2();
                 }
+            }
+            generate2();
+
     
 
 
@@ -260,41 +227,6 @@ function test() {
             event.preventDefault();
             question1();
         });
-
-       /*  fbuttons[2].addEventListener("click", function(event){
-            event.preventDefault();
-            CorFal.innerHTML = "Correct";
-            event.stopImmediatePropagation();
-            score.correct++;
-            console.log(score);
-        });
-
-        fbuttons[0].addEventListener('click', function(event){
-            event.preventDefault();
-            CorFal.innerHTML = "False";
-            event.stopImmediatePropagation();
-            score.wrong++;
-        }
-            ); 
-            //add score to local storage subtract time
-        
-
-        fbuttons[1].addEventListener('click', function(event){
-            event.preventDefault();
-            CorFal.innerHTML = "False";
-            event.stopImmediatePropagation();
-            score.wrong++;
-            //add score to local storage subtract time
-        });
-
-        fbuttons[3].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
-        });*/
-
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
@@ -331,21 +263,21 @@ function test() {
                 if(randominput3.nodeValue != buttons[0].childNodes[2].nodeValue ) {
                     buttons[0].childNodes[2].nodeValue = answers3string[comchoice3];
                 };
-                specify();
-                if (fbuttons[comchoice3].addEventListener('click', correct)){
-                        score.wrong--;
-                        console.log(score);
-                        localStorage.setItem("score", score);
-                }
-                
                 function specify() {
                     for (let i = 0; i < fbuttons.length; i++) {
-                        const element = fbuttons[i];
-                        element.addEventListener('click', wrong)
+                        const element = buttons[i];
+                        if (element == buttons[comchoice3]){
+                            element.addEventListener('click', correct, {once:true});
+                            console.log(score);
+                            localStorage.setItem("score", score.correct);
+                        } else if (element !== buttons[comchoice3]){
+                            element.addEventListener('click', wrong, {once:true});
+                        };
                         
                         };
                         
                     };
+                specify();
                 }
 
         next.addEventListener('click', function(ev){
@@ -358,42 +290,6 @@ function test() {
             event.preventDefault();
             question2();
         });
-
-
-        /*fbuttons[3].addEventListener("click", function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.correct++;
-            CorFal.innerHTML = "Correct";
-            console.log(score);
-        });
-
-            //add score to local storage change button style to permanent color onclick
-        fbuttons[1].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-        }
-            ); 
-            //add score to local storage subtract time
-        
-
-        fbuttons[2].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
-        });
-
-        fbuttons[0].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
-        });*/
 
     };
 
@@ -420,22 +316,21 @@ function test() {
                 if(randominput4.nodeValue != buttons[0].childNodes[2].nodeValue ) {
                     buttons[0].childNodes[2].nodeValue = answers4string[comchoice4];
                 };
-                specify();
-                if (fbuttons[comchoice4].addEventListener('click', correct)){
-                        score.wrong--;
-                        console.log(score);
-                        localStorage.setItem("score", score);
-                }
-                
-                
                 function specify() {
                     for (let i = 0; i < fbuttons.length; i++) {
-                        const element = fbuttons[i];
-                        element.addEventListener('click', wrong)
+                        const element = buttons[i];
+                        if (element == buttons[comchoice4]){
+                            element.addEventListener('click', correct, {once:true});
+                            console.log(score);
+                            localStorage.setItem("score", score.correct);
+                        } else if (element !== buttons[comchoice4]){
+                            element.addEventListener('click', wrong, {once:true});
+                        };
                         
                         };
                         
                     };
+                specify();
                 }
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
@@ -448,41 +343,6 @@ function test() {
             question3();
         });
 
-
-        /*fbuttons[2].addEventListener("click", function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.correct++;
-            CorFal.innerHTML = "Correct";
-            console.log(score);
-        });
-
-            //add score to local storage change button style to permanent color onclick
-        fbuttons[1].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-        }
-            ); 
-            //add score to local storage subtract time
-        
-
-        fbuttons[0].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
-        });
-
-        fbuttons[3].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
-        });*/
 
     };
 
@@ -511,24 +371,22 @@ function test() {
                 if(randominput5.nodeValue != buttons[0].childNodes[2].nodeValue ) {
                     buttons[0].childNodes[2].nodeValue = answers5string[comchoice5];
                 };
-                specify();
-                if (fbuttons[comchoice5].addEventListener('click', correct)){
-                        score.wrong--;
-                        console.log(score);
-                        localStorage.setItem("score", score);
-                }
-                
-                
                 function specify() {
-                    for (let i = 0; i < fbuttons.length; i++) {
-                        const element = fbuttons[i];
-                        element.addEventListener('click', wrong)
-                        
+                   // for (let i = 0; i < fbuttons.length; i++) {
+                       // const element = buttons[i];
+                        if (element == buttons[comchoice5]){
+                            element.addEventListener('click', correct, {once:true});
+                            console.log(score);
+                            localStorage.setItem("score", score.correct);
+                        } else if (element !== buttons[comchoice5]){
+                            element.addEventListener('click', wrong, {once:true});
                         };
                         
-                    };
+                        
+                        
                 }
-
+                specify();
+            }
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
@@ -539,42 +397,6 @@ function test() {
             event.preventDefault();
             question4();
         });
-
-
-        /*fbuttons[1].addEventListener("click", function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.correct++;
-            CorFal.innerHTML = "Correct";
-            console.log(score);
-        });
-
-            //add score to local storage change button style to permanent color onclick
-        fbuttons[0].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-        }
-            ); 
-            //add score to local storage subtract time
-        
-
-        fbuttons[2].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
-        });
-
-        fbuttons[3].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
-        });*/
 
     };
 
@@ -601,26 +423,25 @@ function test() {
             Math.floor(Math.random()* fbuttons.length) 
             element.childNodes[2].nodeValue = answers6string[i];
             randominput6.nodeValue = answers6string[0];
-            if(randominput6.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+            if(randominput6.nodeValue !== buttons[0].childNodes[2].nodeValue ) {
                 buttons[0].childNodes[2].nodeValue = answers6string[comchoice6];
             };
-            specify();
-            if (fbuttons[comchoice6].addEventListener('click', correct)){
-                    score.wrong--;
-                    console.log(score);
-                    localStorage.setItem("score", score);
-            }
-            
-            
             function specify() {
-                for (let i = 0; i < fbuttons.length; i++) {
-                    const element = fbuttons[i];
-                    element.addEventListener('click', wrong)
-                    
+               // for (let i = 0; i < fbuttons.length; i++) {
+                  // const element = buttons[i];
+                    if (element == buttons[comchoice6]){
+                        element.addEventListener('click', correct, {once:true});
+                        console.log(score);
+                        localStorage.setItem("score", score.correct);
+                    } else if (element !== buttons[comchoice6]){
+                        element.addEventListener('click', wrong, {once:true});
                     };
+                    
+                
                     
                 };
             }
+            specify();
 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
@@ -633,41 +454,6 @@ function test() {
             question5();
         });
 
-
-       /* fbuttons[3].addEventListener("click", function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.correct++;
-            CorFal.innerHTML = "Correct";
-            console.log(score);
-        });
-
-            //add score to local storage change button style to permanent color onclick
-        fbuttons[1].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-        }
-            ); 
-            //add score to local storage subtract time
-        
-
-        fbuttons[2].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
-        });
-
-        fbuttons[0].addEventListener('click', function(event){
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            score.wrong++;
-            CorFal.innerHTML = "False";
-            //add score to local storage subtract time
-        }); */
 
     };
 
@@ -693,26 +479,25 @@ function test() {
             Math.floor(Math.random()* fbuttons.length) 
             element.childNodes[2].nodeValue = answers7string[i];
             randominput7.nodeValue = answers7string[0];
-            if(randominput7.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+            if(randominput7.nodeValue !== buttons[0].childNodes[2].nodeValue ) {
                 buttons[0].childNodes[2].nodeValue = answers7string[comchoice7];
             };
-            specify();
-            if (fbuttons[comchoice7].addEventListener('click', correct)){
-                    score.wrong--;
-                    console.log(score);
-                    localStorage.setItem("score", score);
-            }
-            
-            
             function specify() {
-                for (let i = 0; i < fbuttons.length; i++) {
-                    const element = fbuttons[i];
-                    element.addEventListener('click', wrong)
-                    
+               // for (let i = 0; i < fbuttons.length; i++) {
+                    //const element = buttons[i];
+                    if (element == buttons[comchoice7]){
+                        element.addEventListener('click', correct, {once:true});
+                        console.log(score);
+                        localStorage.setItem("score", score.correct);
+                    } else if (element !== buttons[comchoice7]){
+                        element.addEventListener('click', wrong, {once:true});
                     };
                     
+                    //};
+                    
                 };
-            }
+            specify();
+        }
 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
@@ -751,27 +536,25 @@ function test() {
             Math.floor(Math.random()* fbuttons.length) 
             element.childNodes[2].nodeValue = answers8string[i];
             randominput8.nodeValue = answers8string[0];
-            if(randominput8.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+            if(randominput8.nodeValue !== buttons[0].childNodes[2].nodeValue ) {
                 buttons[0].childNodes[2].nodeValue = answers8string[comchoice8];
             };
-            specify();
-            if (fbuttons[comchoice8].addEventListener('click', correct)){
-                    score.wrong--;
-                    console.log(score);
-                    localStorage.setItem("score", score);
-            }
-            
-            
             function specify() {
                 for (let i = 0; i < fbuttons.length; i++) {
-                    const element = fbuttons[i];
-                    element.addEventListener('click', wrong)
+                    const element = buttons[i];
+                    if (element === buttons[comchoice8]){
+                        element.addEventListener('click', correct, {once:true});
+                        console.log(score);
+                        localStorage.setItem("score", score.correct);
+                    } else if (element !== buttons[comchoice8]){
+                        element.addEventListener('click', wrong, {once:true});
+                    };
                     
                     };
                     
                 };
+            specify();
             }
-
         previous.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
@@ -788,6 +571,7 @@ function test() {
 
         }
     };
+
 /* stringify
 mathfloor math Random 
 for iteration 
