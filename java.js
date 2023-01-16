@@ -117,20 +117,12 @@ function test() {
         q1c : "A Text file Structure to substitute HTML",
         q1d : "A function in JavaScript syntax",
         };
-        console.log(answers1);
 
         var answers1string = Object.values(answers1);
 
-        console.log(answers1string[0]);
-
-        console.log(answers1string[3]);
         var comchoice = Math.floor(Math.random()* buttons.length);
-        console.log(buttons[comchoice]);
         var randomselection = buttons[comchoice];
         var randominput = randomselection.childNodes[2];
-        
-        console.log(randominput);
-        console.log(buttons[0].childNodes[2].nodeValue);
 
 
 
@@ -148,8 +140,6 @@ function test() {
                     console.log(score);
                     localStorage.setItem("score", score);
             }
-
-            console.log(fbuttons);
             
             
             function specify() {
@@ -233,22 +223,11 @@ function test() {
             q1c : "Provide the value of the parent element",
             q1d : "Generate a random number value",
             };
-            console.log(answers2);
     
             var answers2string = Object.values(answers2);
-    
-            console.log(answers2string[0]);
-    
-            console.log(answers2string[3]);
             var comchoice2 = Math.floor(Math.random()* buttons.length);
-            console.log(buttons[comchoice2]);
             var randomselection2 = buttons[comchoice2];
             var randominput2 = randomselection2.childNodes[2];
-            
-            console.log(randominput2);
-            console.log(buttons[0].childNodes[2].nodeValue);
-    
-    
     
             for (let i = 1; i < buttons.length; i++) {
                 var element = buttons[i];
@@ -264,9 +243,6 @@ function test() {
                         console.log(score);
                         localStorage.setItem("score", score);
                 }
-    
-                console.log(fbuttons);
-                
                 
                 function specify() {
                     for (let i = 0; i < fbuttons.length; i++) {
@@ -338,21 +314,13 @@ function test() {
             q1c : "Provides an event after a key has been pressed on",
             q1d : "Provides which key is being pressed on",
             };
-            console.log(answers3);
     
             var answers3string = Object.values(answers3);
-    
-            console.log(answers3string[0]);
-    
-            console.log(answers3string[3]);
+
             var comchoice3 = Math.floor(Math.random()* buttons.length);
             console.log(buttons[comchoice3]);
             var randomselection3 = buttons[comchoice3];
             var randominput3 = randomselection3.childNodes[2];
-            
-            console.log(randominput3);
-            console.log(buttons[0].childNodes[2].nodeValue);
-    
     
     
             for (let i = 1; i < buttons.length; i++) {
@@ -369,9 +337,6 @@ function test() {
                         console.log(score);
                         localStorage.setItem("score", score);
                 }
-    
-                console.log(fbuttons);
-                
                 
                 function specify() {
                     for (let i = 0; i < fbuttons.length; i++) {
@@ -441,22 +406,11 @@ function test() {
             q1c : "<src>",
             q1d : "<script>"
             };
-            console.log(answers4);
     
             var answers4string = Object.values(answers4);
-    
-            console.log(answers4string[0]);
-    
-            console.log(answers4string[3]);
             var comchoice4 = Math.floor(Math.random()* buttons.length);
-            console.log(buttons[comchoice4]);
             var randomselection4 = buttons[comchoice4];
             var randominput4 = randomselection4.childNodes[2];
-            
-            console.log(randominput4);
-            console.log(buttons[0].childNodes[2].nodeValue);
-    
-    
     
             for (let i = 1; i < buttons.length; i++) {
                 var element = buttons[i];
@@ -472,8 +426,6 @@ function test() {
                         console.log(score);
                         localStorage.setItem("score", score);
                 }
-    
-                console.log(fbuttons);
                 
                 
                 function specify() {
@@ -543,21 +495,12 @@ function test() {
             q1c : ".createElement",
             q1d : ".textContent"
             };
-            console.log(answers5);
     
             var answers5string = Object.values(answers5);
-    
-            console.log(answers5string[0]);
-    
-            console.log(answers5string[3]);
+
             var comchoice5 = Math.floor(Math.random()* buttons.length);
-            console.log(buttons[comchoice5]);
             var randomselection5 = buttons[comchoice5];
             var randominput5 = randomselection5.childNodes[2];
-            
-            console.log(randominput5);
-            console.log(buttons[0].childNodes[2].nodeValue);
-    
     
     
             for (let i = 1; i < buttons.length; i++) {
@@ -574,8 +517,6 @@ function test() {
                         console.log(score);
                         localStorage.setItem("score", score);
                 }
-    
-                console.log(fbuttons);
                 
                 
                 function specify() {
@@ -647,21 +588,11 @@ function test() {
             q1c : "item.innerHTML = ",
             q1d : "var x = 'text'; ",
             };
-
-        console.log(answers6);
     
         var answers6string = Object.values(answers6);
-
-        console.log(answers6string[0]);
-
-        console.log(answers6string[3]);
         var comchoice6 = Math.floor(Math.random()* buttons.length);
-        console.log(buttons[comchoice6]);
         var randomselection6 = buttons[comchoice6];
         var randominput6 = randomselection6.childNodes[2];
-        
-        console.log(randominput6);
-        console.log(buttons[0].childNodes[2].nodeValue);
 
 
 
@@ -679,8 +610,6 @@ function test() {
                     console.log(score);
                     localStorage.setItem("score", score);
             }
-
-            console.log(fbuttons);
             
             
             function specify() {
@@ -752,21 +681,10 @@ function test() {
             q1c : "localStorage.log()",
             q1d : "localStorage.console.log(object)",
             };
-
-        console.log(answers7);
-    
         var answers7string = Object.values(answers7);
-
-        console.log(answers7string[0]);
-
-        console.log(answers7string[3]);
         var comchoice7 = Math.floor(Math.random()* buttons.length);
-        console.log(buttons[comchoice7]);
         var randomselection7 = buttons[comchoice7];
         var randominput7 = randomselection7.childNodes[2];
-        
-        console.log(randominput7);
-        console.log(buttons[0].childNodes[2].nodeValue);
 
 
 
@@ -784,8 +702,6 @@ function test() {
                     console.log(score);
                     localStorage.setItem("score", score);
             }
-
-            console.log(fbuttons);
             
             
             function specify() {
@@ -822,20 +738,11 @@ function test() {
             q1d : "stringify(object)",
             };
 
-        console.log(answers8);
-    
         var answers8string = Object.values(answers8);
 
-        console.log(answers8string[0]);
-
-        console.log(answers8string[3]);
         var comchoice8 = Math.floor(Math.random()* buttons.length);
-        console.log(buttons[comchoice8]);
         var randomselection8 = buttons[comchoice8];
         var randominput8 = randomselection8.childNodes[2];
-        
-        console.log(randominput8);
-        console.log(buttons[0].childNodes[2].nodeValue);
 
 
 
@@ -853,8 +760,6 @@ function test() {
                     console.log(score);
                     localStorage.setItem("score", score);
             }
-
-            console.log(fbuttons);
             
             
             function specify() {
