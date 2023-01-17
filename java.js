@@ -26,7 +26,7 @@ var next = document.getElementById("next");
 
 var previous = document.getElementById("previous");
 
-var abcd = document.querySelectorAll("#ABCD");
+var abcd = document.querySelector(".ABCD");
 
 var timer = document.getElementById('timeleft');
 
@@ -58,7 +58,7 @@ function test() {
         score.wrong++;
     };
 
-    function correct(ev){
+    let correct = function(ev) {
         ev.stopPropagation();
         CorFal.innerHTML = "Correct";
         increment();
@@ -74,14 +74,21 @@ function test() {
             minutes--;
         }
     }
-    function wrong(ev){
+    let wrong = function(ev) {
         ev.stopPropagation();
         CorFal.innerHTML = "False";
         decrement();
         minustime();
         window.alert('30 Seconds Lost!');
         console.log(score);
+    
     }
+    function specify(randanswer) {
+        randanswer.addEventListener('click', correct, {once:true})
+        console.log(score);
+        localStorage.setItem("score", score.correct);
+        abcd.addEventListener('click', wrong, {once:true});
+    };
 
     function countdown(){
 
@@ -114,10 +121,6 @@ function test() {
     function question1() {
 
         question.innerHTML = "What does JQuery do?";
-        /*choicetextA.nodeValue = "Allow code and syntax to become more compact and dynamic";
-        choicetextB.nodeValue = "Create an environment for hosting APIs";
-        choicetextC.nodeValue = "A Text file Structure to substitute HTML";
-        choicetextD.textContent = "A function in JavaScript syntax";*/
         CorFal.innerHTML = "";
 
         var answers1 = {
@@ -143,25 +146,9 @@ function test() {
             if(randominput.nodeValue != buttons[0].childNodes[2].nodeValue ) {
                 buttons[0].childNodes[2].nodeValue = answers1string[comchoice];
             };
-            function specify() {
-                for (let i = 0; i < fbuttons.length; i++) {
-                    const element = buttons[i];
-                    if (element == buttons[comchoice]){
-                        element.addEventListener('click', correct, {once:true});
-                        wrong = function(cancel) {
-                            cancel.preventDefault();
-                        };
-                        console.log(score);
-                        localStorage.setItem("score", score.correct);
-                    } else if (element !== buttons[comchoice]){
-                        element.addEventListener('click', wrong, {once:true});
-                    };
-                    
-                    };
-                    
-                };
-            specify();
         }
+
+            specify(randomselection);
         };
             generate();
 
@@ -192,7 +179,6 @@ function test() {
             var randomselection2 = buttons[comchoice2];
             var randominput2 = randomselection2.childNodes[2];
 
-            function generate2() {
             for (let i = 1; i < buttons.length; i++) {
                 var element = buttons[i];
                 Math.floor(Math.random()* fbuttons.length) 
@@ -201,24 +187,11 @@ function test() {
                 if(randominput2.nodeValue != buttons[0].childNodes[2].nodeValue ) {
                     buttons[0].childNodes[2].nodeValue = answers2string[comchoice2];
                 };
-                function specify2() {
-                    for (let i = 0; i < fbuttons.length; i++) {
-                        const cliff = buttons[i];
-                        if (cliff == buttons[comchoice2]){
-                            cliff.addEventListener('click', correct, {once:true})
-                            console.log(score);
-                            localStorage.setItem("score", score.correct);
-                        } else if (cliff !== buttons[comchoice2]){
-                            cliff.addEventListener('click', wrong, {once:true});
-                        };
-                        
-                        };
-                        
-                    };
-                specify2();
-                }
             }
-            generate2();
+                        
+                    
+                specify(randomselection2);
+                
 
     
 
@@ -232,8 +205,9 @@ function test() {
             ev.preventDefault();
             question3();
         });
+    }
 
-        };
+
 
     function question3() {
 
@@ -263,22 +237,8 @@ function test() {
                 if(randominput3.nodeValue != buttons[0].childNodes[2].nodeValue ) {
                     buttons[0].childNodes[2].nodeValue = answers3string[comchoice3];
                 };
-                function specify() {
-                    for (let i = 0; i < fbuttons.length; i++) {
-                        const element = buttons[i];
-                        if (element == buttons[comchoice3]){
-                            element.addEventListener('click', correct, {once:true});
-                            console.log(score);
-                            localStorage.setItem("score", score.correct);
-                        } else if (element !== buttons[comchoice3]){
-                            element.addEventListener('click', wrong, {once:true});
-                        };
-                        
-                        };
-                        
-                    };
-                specify();
-                }
+            }
+                specify(randomselection3);
 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
@@ -316,22 +276,9 @@ function test() {
                 if(randominput4.nodeValue != buttons[0].childNodes[2].nodeValue ) {
                     buttons[0].childNodes[2].nodeValue = answers4string[comchoice4];
                 };
-                function specify() {
-                    for (let i = 0; i < fbuttons.length; i++) {
-                        const element = buttons[i];
-                        if (element == buttons[comchoice4]){
-                            element.addEventListener('click', correct, {once:true});
-                            console.log(score);
-                            localStorage.setItem("score", score.correct);
-                        } else if (element !== buttons[comchoice4]){
-                            element.addEventListener('click', wrong, {once:true});
-                        };
-                        
-                        };
-                        
-                    };
-                specify();
-                }
+            }
+                specify(randomselection4);
+                
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
@@ -371,22 +318,9 @@ function test() {
                 if(randominput5.nodeValue != buttons[0].childNodes[2].nodeValue ) {
                     buttons[0].childNodes[2].nodeValue = answers5string[comchoice5];
                 };
-                function specify() {
-                   // for (let i = 0; i < fbuttons.length; i++) {
-                       // const element = buttons[i];
-                        if (element == buttons[comchoice5]){
-                            element.addEventListener('click', correct, {once:true});
-                            console.log(score);
-                            localStorage.setItem("score", score.correct);
-                        } else if (element !== buttons[comchoice5]){
-                            element.addEventListener('click', wrong, {once:true});
-                        };
-                        
-                        
-                        
-                }
-                specify();
             }
+                specify(randomselection5);
+            
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
@@ -426,22 +360,9 @@ function test() {
             if(randominput6.nodeValue !== buttons[0].childNodes[2].nodeValue ) {
                 buttons[0].childNodes[2].nodeValue = answers6string[comchoice6];
             };
-            function specify() {
-               // for (let i = 0; i < fbuttons.length; i++) {
-                  // const element = buttons[i];
-                    if (element == buttons[comchoice6]){
-                        element.addEventListener('click', correct, {once:true});
-                        console.log(score);
-                        localStorage.setItem("score", score.correct);
-                    } else if (element !== buttons[comchoice6]){
-                        element.addEventListener('click', wrong, {once:true});
-                    };
-                    
-                
-                    
-                };
-            }
-            specify();
+        }
+    
+            specify(randomselection6);
 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
@@ -482,22 +403,8 @@ function test() {
             if(randominput7.nodeValue !== buttons[0].childNodes[2].nodeValue ) {
                 buttons[0].childNodes[2].nodeValue = answers7string[comchoice7];
             };
-            function specify() {
-               // for (let i = 0; i < fbuttons.length; i++) {
-                    //const element = buttons[i];
-                    if (element == buttons[comchoice7]){
-                        element.addEventListener('click', correct, {once:true});
-                        console.log(score);
-                        localStorage.setItem("score", score.correct);
-                    } else if (element !== buttons[comchoice7]){
-                        element.addEventListener('click', wrong, {once:true});
-                    };
-                    
-                    //};
-                    
-                };
-            specify();
         }
+            specify(randomselection7);
 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
@@ -539,22 +446,8 @@ function test() {
             if(randominput8.nodeValue !== buttons[0].childNodes[2].nodeValue ) {
                 buttons[0].childNodes[2].nodeValue = answers8string[comchoice8];
             };
-            function specify() {
-                for (let i = 0; i < fbuttons.length; i++) {
-                    const element = buttons[i];
-                    if (element === buttons[comchoice8]){
-                        element.addEventListener('click', correct, {once:true});
-                        console.log(score);
-                        localStorage.setItem("score", score.correct);
-                    } else if (element !== buttons[comchoice8]){
-                        element.addEventListener('click', wrong, {once:true});
-                    };
-                    
-                    };
-                    
-                };
-            specify();
-            }
+        }
+            specify(randomselection8);
         previous.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
@@ -569,8 +462,9 @@ function test() {
             window.open('indexlast.html');
         });
 
-        }
-    };
+    }
+
+}
 
 /* stringify
 mathfloor math Random 
