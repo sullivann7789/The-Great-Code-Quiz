@@ -59,7 +59,7 @@ function test() {
     };
 
     let correct = function(ev) {
-        ev.stopPropagation();
+        ev.stopImmediatePropagation();
         CorFal.innerHTML = "Correct";
         increment();
         console.log(score);
@@ -75,7 +75,7 @@ function test() {
         }
     }
     let wrong = function(ev) {
-        ev.stopPropagation();
+        ev.stopImmediatePropagation();
         CorFal.innerHTML = "False";
         decrement();
         minustime();
@@ -84,11 +84,21 @@ function test() {
     
     }
     function specify(randanswer) {
-        randanswer.addEventListener('click', correct, {once:true})
+        randanswer.addEventListener('click', correct, {once:true});
         console.log(score);
         localStorage.setItem("score", score.correct);
         abcd.addEventListener('click', wrong, {once:true});
     };
+
+    function rectify(randanswer) {
+        randanswer.removeEventListener('click', correct, {once:true});
+        randanswer.removeEventListener('click', wrong, {once:true});
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].removeEventListener('click', wrong, {once:true});
+            buttons[0].removeEventListener('click', correct, {once:true});
+            buttons[0].removeEventListener('click', wrong, {once:true});
+        }
+        }
 
     function countdown(){
 
@@ -107,8 +117,12 @@ function test() {
                 if (minutes == -1) {
                 clearInterval(timeinterval);
                 scorepage();
+                }
             }
-        }
+            if (minutes <= -1) {
+                clearInterval(timeinterval);
+                scorepage();
+            }
         }, 1000);
     };
 
@@ -143,19 +157,27 @@ function test() {
             Math.floor(Math.random()* fbuttons.length) 
             element.childNodes[2].nodeValue = answers1string[i];
             randominput.nodeValue = answers1string[0];
-            if(randominput.nodeValue != buttons[0].childNodes[2].nodeValue ) {
-                buttons[0].childNodes[2].nodeValue = answers1string[comchoice];
-            };
-        }
+            if(randominput.textContent !== buttons[0].childNodes[2].textContent ) {
+               buttons[0].childNodes[2].nodeValue = answers1string[comchoice];
+            
+             buttons[0].addEventListener('click',wrong,{once: true});}
+            //if(randominput.nodeValue !== element.childNodes[2].nodeValue ) {
+             //  element.addEventListener('click', wrong, {once: true});
+            }
+        
 
-            specify(randomselection);
+            
         };
+        
             generate();
+            specify(randomselection);
 
 
             next.addEventListener('click', function(ev){
                 ev.preventDefault();
+                rectify(randomselection);
                 question2();
+               
             });
         }
 
@@ -184,10 +206,16 @@ function test() {
                 Math.floor(Math.random()* fbuttons.length) 
                 element.childNodes[2].nodeValue = answers2string[i];
                 randominput2.nodeValue = answers2string[0];
-                if(randominput2.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+                if(randominput2.textContent !== buttons[0].childNodes[2].textContent ) {
                     buttons[0].childNodes[2].nodeValue = answers2string[comchoice2];
+                    buttons[0].addEventListener('click',wrong,{once: true});
                 };
+              //  buttons[0].addEventListener('click',wrong,{once: true});
+               // if(randominput2.nodeValue !== element.childNodes[2].nodeValue ) {
+                //    element.addEventListener('click', wrong, {once: true});
+              //  }
             }
+        
                         
                     
                 specify(randomselection2);
@@ -203,6 +231,7 @@ function test() {
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
+            rectify(randomselection2);
             question3();
         });
     }
@@ -234,20 +263,25 @@ function test() {
                 Math.floor(Math.random()* fbuttons.length) 
                 element.childNodes[2].nodeValue = answers3string[i];
                 randominput3.nodeValue = answers3string[0];
-                if(randominput3.nodeValue != buttons[0].childNodes[2].nodeValue ) {
-                    buttons[0].childNodes[2].nodeValue = answers3string[comchoice3];
-                };
+                if(randominput3.textContent !== buttons[0].childNodes[2].textContent ) {
+                   buttons[0].childNodes[2].nodeValue = answers3string[comchoice3];
+                   buttons[0].addEventListener('click',wrong,{once: true});
+                }
+              //  buttons[0].addEventListener('click',wrong,{once: true});
             }
+        
                 specify(randomselection3);
 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
+            rectify(randomselection3);
             question4();
         });
 
         previous.addEventListener("click", function(event){
             event.preventDefault();
+            
             question2();
         });
 
@@ -273,15 +307,21 @@ function test() {
                 Math.floor(Math.random()* fbuttons.length) 
                 element.childNodes[2].nodeValue = answers4string[i];
                 randominput4.nodeValue = answers4string[0];
-                if(randominput4.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+                if(randominput4.textContent !== buttons[0].childNodes[2].textContent ) {
                     buttons[0].childNodes[2].nodeValue = answers4string[comchoice4];
+                    buttons[0].addEventListener('click',wrong,{once: true});
                 };
+              //  if(randominput4.nodeValue !== element.childNodes[2].nodeValue ) {
+                //    element.addEventListener('click', wrong, {once: true});
+                //}
+              //  buttons[0].addEventListener('click',wrong,{once: true});
             }
                 specify(randomselection4);
                 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
+            rectify(randomselection4);
             question5();
         });
 
@@ -315,15 +355,21 @@ function test() {
                 Math.floor(Math.random()* fbuttons.length) 
                 element.childNodes[2].nodeValue = answers5string[i];
                 randominput5.nodeValue = answers5string[0];
-                if(randominput5.nodeValue != buttons[0].childNodes[2].nodeValue ) {
+                if(randominput5.textContent !== buttons[0].childNodes[2].textContent ) {
                     buttons[0].childNodes[2].nodeValue = answers5string[comchoice5];
+                    buttons[0].addEventListener('click', wrong, {once: true});
                 };
+               // buttons[0].addEventListener('click',wrong,{once: true});
+               // if(randominput5.nodeValue !== element.childNodes[2].nodeValue ) {
+                 //   element.addEventListener('click', wrong, {once: true});
+                //}
             }
                 specify(randomselection5);
             
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
+            rectify(randomselection5);
             question6();
         });
 
@@ -356,10 +402,15 @@ function test() {
             var element = buttons[i];
             Math.floor(Math.random()* fbuttons.length) 
             element.childNodes[2].nodeValue = answers6string[i];
+            var newzero = buttons[0].childNodes[2].textContent;
+            console.log(newzero);
+            console.log(randominput6.textContent);
             randominput6.nodeValue = answers6string[0];
-            if(randominput6.nodeValue !== buttons[0].childNodes[2].nodeValue ) {
+            if(randominput6.textContent !== buttons[0].childNodes[2].textContent ) {
                 buttons[0].childNodes[2].nodeValue = answers6string[comchoice6];
+                buttons[0].addEventListener('click', wrong, {once: true});
             };
+            //buttons[0].addEventListener('click',wrong,{once: true});
         }
     
             specify(randomselection6);
@@ -367,6 +418,7 @@ function test() {
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
+            rectify(randomselection6);
             question7();
         });
 
@@ -400,15 +452,18 @@ function test() {
             Math.floor(Math.random()* fbuttons.length) 
             element.childNodes[2].nodeValue = answers7string[i];
             randominput7.nodeValue = answers7string[0];
-            if(randominput7.nodeValue !== buttons[0].childNodes[2].nodeValue ) {
+            if(randominput7.textContent !== buttons[0].childNodes[2].textContent ) {
                 buttons[0].childNodes[2].nodeValue = answers7string[comchoice7];
+                buttons[0].addEventListener('click', wrong, {once: true});
             };
+            //buttons[0].addEventListener('click',wrong,{once: true});
         }
             specify(randomselection7);
 
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
+            rectify(randomselection7);
             question8();
         });
 
@@ -443,9 +498,11 @@ function test() {
             Math.floor(Math.random()* fbuttons.length) 
             element.childNodes[2].nodeValue = answers8string[i];
             randominput8.nodeValue = answers8string[0];
-            if(randominput8.nodeValue !== buttons[0].childNodes[2].nodeValue ) {
+            if(randominput8.textContent !== buttons[0].childNodes[2].textContent) {
                 buttons[0].childNodes[2].nodeValue = answers8string[comchoice8];
+               // buttons[0].addEventListener('click', wrong, {once: true});
             };
+           // buttons[0].addEventListener('click',wrong,{once: true});
         }
             specify(randomselection8);
         previous.addEventListener('click', function(ev){
@@ -459,6 +516,7 @@ function test() {
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
+            rectify(randomselection8);
             window.open('indexlast.html');
         });
 
@@ -484,3 +542,5 @@ the new choices
 the right answer in a randomly selected position
 */
 test();
+
+
