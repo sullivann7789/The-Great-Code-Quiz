@@ -95,6 +95,7 @@ function test() {
         randanswer.removeEventListener('click', wrong, {once:true});
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].removeEventListener('click', wrong, {once:true});
+            buttons[i].removeEventListener('click',correct, {once:true});
             buttons[0].removeEventListener('click', correct, {once:true});
             buttons[0].removeEventListener('click', wrong, {once:true});
         }
