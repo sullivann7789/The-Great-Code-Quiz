@@ -3,5 +3,5 @@ var begin = document.getElementById('submit');
 function starttest() {
     var name = username.innerHTML;
     localStorage.setItem('username', name);
-    window.open('./index.html');
+    window.open('./index1.html');
 };

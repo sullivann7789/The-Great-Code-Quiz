@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">/>
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Code Quiz</title>
+</head>
+
+<body>
+    <div id = "bodytitle">
+        <h3 id="timeleft"></h3>
+        <h1> Code Quiz</h1>
+        
+        <span id ="question"></span>
+    </div>
+    <div id="choices">
+        <h3 id="CF"> Correct or False?</h3>
+        <ul class="ABCD">
+            <li class="answer" id="A">
+                <button class="fbuttons" id="choice1">A</button>
+                this is a test.
+            </li>
+            <li class="answer" id="B">
+                <button class="fbuttons" id="choice2">B</button>
+            </li>
+            <li class="answer" id="C">
+                <button class="fbuttons" id="choice3">C</button>
+            </li>
+            <li class="answer" id="D">
+                <button class="fbuttons" id="choice4">D</button>
+            </li>
+        </ul>
+        <div id="nextback">
+        <button class="slides" id="previous">Previous</button>
+        <button class="slides" id="next">Next</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src = "./java.js"></script>
+</body>
+</html>
+<!--
+    - Create a html structure that is based off a multiple choice questionnaire 
+    - include a previous and next button
+    - title, choice, time, and score section
+    - create two separate html files that links to the final score page and beginning page
+    - create question answers in li ul format
+-->
