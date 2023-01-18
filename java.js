@@ -41,7 +41,6 @@ var score = {
     wrong: 0,
 };
 
-
 console.log(score);
 
 
@@ -59,10 +58,12 @@ function test() {
         score.wrong++;
     };
 
-    let correct = function(ev) {
-        ev.stopImmediatePropagation();
-        CorFal.innerHTML = "Correct";
-        increment();
+    var correct = function(ev) {
+        ev.stopPropagation();
+        if (CorFal.innerHTML == ""){
+            CorFal.innerHTML = "Correct";
+            increment();
+        }
         console.log(score);
         };
 
@@ -75,24 +76,25 @@ function test() {
             minutes--;
         }
     }
-    let wrong = function(ev) {
-        ev.stopImmediatePropagation();
-        CorFal.innerHTML = "False";
-        decrement();
-        minustime();
-        window.alert('30 Seconds Lost!');
+    var wrong = function(ev) {
+        ev.stopPropagation();
+        if (CorFal.innerHTML == "Correct"){
+            CorFal.innerHTML = "Please Click Next to Continue";
+        } else if (CorFal.innerHTML == "") {
+            CorFal.innerHTML = "False";
+            decrement();
+            minustime();
+            window.alert('30 Seconds Lost!');
+        } else if (CorFal.innerHTML == "False"){
+            CorFal.innerHTML = "This is False as well";
+        }
         console.log(score);
         };
-
     function specify(randanswer) {
-        var clicks = 0;
-        randanswer.addEventListener('click', correct, {once:true});
         abcd.addEventListener('click', wrong, {once:true});
         console.log(score);
         localStorage.setItem("score", score.correct);
-        if (score.wrong = 1) {
-            randanswer.removeEventListener('click', correct, {once:true});   
-        } 
+        randanswer.addEventListener('click', correct, {once:true});  
     }
     
 
@@ -180,7 +182,9 @@ function test() {
         
             generate();
             specify(randomselection);
-
+            abcd.addEventListener('click', function(){
+                rectify(randomselection);
+            })
 
             next.addEventListener('click', function(ev){
                 ev.preventDefault();
