@@ -41,6 +41,8 @@ var score = {
     wrong: 0,
 };
 
+var clicked = false;
+
 console.log(score);
 
 
@@ -63,7 +65,8 @@ function test() {
         CorFal.innerHTML = "Correct";
         increment();
         console.log(score);
-    }
+        clicked = true;
+        };
 
     function minustime () {
         if (seconds >= 30) {
@@ -81,14 +84,16 @@ function test() {
         minustime();
         window.alert('30 Seconds Lost!');
         console.log(score);
-    
-    }
+        clicked = true;
+        };
+
     function specify(randanswer) {
-        randanswer.addEventListener('click', correct, {once:true});
+        randanswer.addEventListener('click', correct, {once:true})
         console.log(score);
         localStorage.setItem("score", score.correct);
-        abcd.addEventListener('click', wrong, {once:true});
-    };
+        abcd.addEventListener('click', wrong, {once:true})
+        }
+    
 
     function rectify(randanswer) {
         randanswer.removeEventListener('click', correct, {once:true});
@@ -98,6 +103,7 @@ function test() {
             buttons[i].removeEventListener('click',correct, {once:true});
             buttons[0].removeEventListener('click', correct, {once:true});
             buttons[0].removeEventListener('click', wrong, {once:true});
+            abcd.removeEventListener('click', wrong, {once:true});
         }
         }
 
@@ -161,10 +167,10 @@ function test() {
             if(randominput.textContent !== buttons[0].childNodes[2].textContent ) {
                buttons[0].childNodes[2].nodeValue = answers1string[comchoice];
             
-             buttons[0].addEventListener('click',wrong,{once: true});}
+             //buttons[0].addEventListener('click',wrong,{once: true});}
             //if(randominput.nodeValue !== element.childNodes[2].nodeValue ) {
              //  element.addEventListener('click', wrong, {once: true});
-            }
+            }}
         
 
             
@@ -209,7 +215,7 @@ function test() {
                 randominput2.nodeValue = answers2string[0];
                 if(randominput2.textContent !== buttons[0].childNodes[2].textContent ) {
                     buttons[0].childNodes[2].nodeValue = answers2string[comchoice2];
-                    buttons[0].addEventListener('click',wrong,{once: true});
+                   // buttons[0].addEventListener('click',wrong,{once: true});
                 };
               //  buttons[0].addEventListener('click',wrong,{once: true});
                // if(randominput2.nodeValue !== element.childNodes[2].nodeValue ) {
@@ -266,7 +272,7 @@ function test() {
                 randominput3.nodeValue = answers3string[0];
                 if(randominput3.textContent !== buttons[0].childNodes[2].textContent ) {
                    buttons[0].childNodes[2].nodeValue = answers3string[comchoice3];
-                   buttons[0].addEventListener('click',wrong,{once: true});
+                //   buttons[0].addEventListener('click',wrong,{once: true});
                 }
               //  buttons[0].addEventListener('click',wrong,{once: true});
             }
@@ -358,7 +364,7 @@ function test() {
                 randominput5.nodeValue = answers5string[0];
                 if(randominput5.textContent !== buttons[0].childNodes[2].textContent ) {
                     buttons[0].childNodes[2].nodeValue = answers5string[comchoice5];
-                    buttons[0].addEventListener('click', wrong, {once: true});
+                   // buttons[0].addEventListener('click', wrong, {once: true});
                 };
                // buttons[0].addEventListener('click',wrong,{once: true});
                // if(randominput5.nodeValue !== element.childNodes[2].nodeValue ) {
@@ -409,7 +415,7 @@ function test() {
             randominput6.nodeValue = answers6string[0];
             if(randominput6.textContent !== buttons[0].childNodes[2].textContent ) {
                 buttons[0].childNodes[2].nodeValue = answers6string[comchoice6];
-                buttons[0].addEventListener('click', wrong, {once: true});
+              //  buttons[0].addEventListener('click', wrong, {once: true});
             };
             //buttons[0].addEventListener('click',wrong,{once: true});
         }
@@ -455,7 +461,7 @@ function test() {
             randominput7.nodeValue = answers7string[0];
             if(randominput7.textContent !== buttons[0].childNodes[2].textContent ) {
                 buttons[0].childNodes[2].nodeValue = answers7string[comchoice7];
-                buttons[0].addEventListener('click', wrong, {once: true});
+               // buttons[0].addEventListener('click', wrong, {once: true});
             };
             //buttons[0].addEventListener('click',wrong,{once: true});
         }
