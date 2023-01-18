@@ -4,7 +4,9 @@
     background-color: rgb(132, 92, 172);
     color:rgb(216, 208, 140);
     text-align: center;
+  
 }
+
 h1 {
     margin-bottom: 20px;
     text-align: center;
@@ -13,12 +15,20 @@ h1 {
 #timeleft {
     position: fixed;
     margin-left: 80%;
-    padding-bottom: 95%;
+    bottom: 95%;
     font-size: 30px;
+
 }
 
 #question{
     font-size: 25px;
+
+}
+
+#CF {
+    font-size: 25px;
+    margin-top: 10px;
+
 }
 .fbuttons {
  background-color:rgb(216, 208, 140);
@@ -26,6 +36,7 @@ h1 {
  margin-right: 15px;
  margin-bottom: 10px;
  text-align: center;
+
 }
 
 .slides {
@@ -33,13 +44,16 @@ h1 {
     color: rgb(132, 92, 172) ;
     margin-left: 10px;
 
+
 }
 .ABCD {
     margin-top: 50px;
     margin-bottom: 30px;
+
 }
 ul li {
     text-align: left;
     list-style: none;
     padding-left: 35%;
+
 }

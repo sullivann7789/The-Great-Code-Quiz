@@ -60,7 +60,7 @@ function test() {
 
     var correct = function(ev) {
         ev.stopPropagation();
-        if (CorFal.innerHTML == ""){
+        if (CorFal.innerHTML == " "){
             CorFal.innerHTML = "Correct";
             increment();
         }
@@ -80,7 +80,7 @@ function test() {
         ev.stopPropagation();
         if (CorFal.innerHTML == "Correct"){
             CorFal.innerHTML = "Please Click Next to Continue";
-        } else if (CorFal.innerHTML == "") {
+        } else if (CorFal.innerHTML == " ") {
             CorFal.innerHTML = "False";
             decrement();
             minustime();
@@ -146,7 +146,7 @@ function test() {
     function question1() {
 
         question.innerHTML = "What does JQuery do?";
-        CorFal.innerHTML = "";
+        CorFal.innerHTML = " ";
 
         var answers1 = {
         q1a : "Allow code and syntax to become more compact and dynamic",
@@ -182,9 +182,6 @@ function test() {
         
             generate();
             specify(randomselection);
-            abcd.addEventListener('click', function(){
-                rectify(randomselection);
-            })
 
             next.addEventListener('click', function(ev){
                 ev.preventDefault();
@@ -201,7 +198,7 @@ function test() {
     function question2() {
 
         question.innerHTML = "What does the .nodeValue event handler do?";
-        CorFal.innerHTML = "";
+        CorFal.innerHTML = " ";
         var answers2 = {
             q1a : "Provide the internal value of the element",
             q1b : "Create a new Node",
@@ -254,7 +251,7 @@ function test() {
     function question3() {
 
         question.innerHTML = "What is the purpose of event handler .addEventListener('keydown',function())?";
-        CorFal.innerHTML = "";
+        CorFal.innerHTML = " ";
 
         var answers3 = {
             q1a : "Provides an event when a key is being pressed on ",
@@ -302,7 +299,7 @@ function test() {
 
     function question4() {
         question.innerHTML = "What HTML element do you use if you want to create a clickable link?";
-        CorFal.innerHTML = "";
+        CorFal.innerHTML = " ";
         var answers4 = {
             q1a : "<a href=''>",
             q1b : "<href=''>",
@@ -348,7 +345,7 @@ function test() {
 
     function question5() {
         question.innerHTML = "How do you add an element, or code structure (such as text), to another HTML element using JS?";
-        CorFal.innerHTML = "";
+        CorFal.innerHTML = " ";
         var answers5 = {
             q1a : ".append or .appendChild",
             q1b : ".add",
@@ -395,7 +392,7 @@ function test() {
 
     function question6() {
         question.innerHTML = "How do you convert text into a JavaScript object using JavaScript?";
-        CorFal.innerHTML = "";
+        CorFal.innerHTML = " ";
 
         var answers6 = {
             q1a : "JSON.parse()",
@@ -445,7 +442,7 @@ function test() {
 
     function question7() {
         question.innerHTML = "How do you store an object in storage?";
-        CorFal.innerHTML = "";
+        CorFal.innerHTML = " ";
 
         var answers7 = {
             q1a : "localStorage.setItem()",
@@ -489,7 +486,7 @@ function test() {
 
     function question8() {
         question.innerHTML = "how do you convert an object into a string";
-        CorFal.innerHTML = "";
+        CorFal.innerHTML = " ";
 
         var answers8 = {
             q1a : "JSON.stringify(object)",
