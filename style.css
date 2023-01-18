@@ -4,12 +4,14 @@
     background-color: rgb(132, 92, 172);
     color:rgb(216, 208, 140);
     text-align: center;
-  
 }
 
 h1 {
+    margin-top: 15px;
     margin-bottom: 20px;
     text-align: center;
+    font-weight: 800;
+    font-style: italic;
 }
 
 #timeleft {
@@ -22,6 +24,9 @@ h1 {
 
 #question{
     font-size: 25px;
+    align-items: center;
+    font-weight: 800;
+    font-style: italic;
 
 }
 
@@ -58,4 +63,99 @@ ul li {
     list-style: none;
     padding-left: 33%;
 
+}
+
+body {
+    align-items: center;
+}
+
+#USERINPUT{
+    text-align: left;
+    margin-left: 30%;
+    margin-top: 20%;
+    margin-bottom: 30%;
+}
+
+#submit {
+    background-color: rgb(216, 208, 140);
+    border-style: none;
+    border-color: black;
+    border: 1px;
+    color: rgb(132, 92, 172);
+    font-weight: 900;
+    font-style: oblique;
+    border-radius: 11px;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+}
+
+#nameinput {
+    background-color: rgb(216, 208, 140);
+    border-style: none;
+    border-color: black;
+    border: 1px;
+    color: rgb(132, 92, 172);
+    font-weight: 900;
+    font-style: oblique;
+    border-radius: 11px;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+}
+
+#namelabel {
+    font-style:italic;
+    font-weight: 900;
+}
+
+h2 {
+    text-align: left;
+    padding-bottom: 15px;
+    font-style: oblique;
+}
+
+.fbuttons {
+    background-color:rgb(216, 208, 140);
+    border-style: none;
+    border-color: black;
+    border: 1px;
+    color: rgb(132, 92, 172);
+    font-weight: 900;
+    font-style: oblique;
+    border-radius: 11px;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+}
+
+.slides {
+    background-color:rgb(216, 208, 140);
+    border-style: none;
+    border-color: black;
+    border: 1px;
+    color: rgb(132, 92, 172);
+    font-weight: 900;
+    font-style: oblique;
+    border-radius: 11px;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+}
+
+#choices{
+    font-weight: 800;
+    font-style: italic;
+}
+
+#wins {
+    font-weight: 800;
+    font-style: italic;
+    color:rgb(216, 208, 140);
+    font-size: 29px;
+    align-items: center;
 }
