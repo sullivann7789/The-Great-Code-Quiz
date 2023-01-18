@@ -41,7 +41,6 @@ var score = {
     wrong: 0,
 };
 
-var clicked = false;
 
 console.log(score);
 
@@ -65,7 +64,6 @@ function test() {
         CorFal.innerHTML = "Correct";
         increment();
         console.log(score);
-        clicked = true;
         };
 
     function minustime () {
@@ -84,15 +82,18 @@ function test() {
         minustime();
         window.alert('30 Seconds Lost!');
         console.log(score);
-        clicked = true;
         };
 
     function specify(randanswer) {
-        randanswer.addEventListener('click', correct, {once:true})
+        var clicks = 0;
+        randanswer.addEventListener('click', correct, {once:true});
+        abcd.addEventListener('click', wrong, {once:true});
         console.log(score);
         localStorage.setItem("score", score.correct);
-        abcd.addEventListener('click', wrong, {once:true})
-        }
+        if (score.wrong = 1) {
+            randanswer.removeEventListener('click', correct, {once:true});   
+        } 
+    }
     
 
     function rectify(randanswer) {
@@ -104,6 +105,7 @@ function test() {
             buttons[0].removeEventListener('click', correct, {once:true});
             buttons[0].removeEventListener('click', wrong, {once:true});
             abcd.removeEventListener('click', wrong, {once:true});
+            score.wrong = 0;
         }
         }
 
