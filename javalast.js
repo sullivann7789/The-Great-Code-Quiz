@@ -1,6 +1,9 @@
-let displayscore = localStorage.getItem("score");
-let display = document.getElementById('wins');
 
-console.log(displayscore);
+ var displayscore = window.localStorage.getItem("score");
+ var setuserscore = document.getElementById('wins');
+setuserscore.innerHTML = displayscore;
 
-display.innerHTML = displayscore;
+
+
+
+

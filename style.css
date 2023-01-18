@@ -43,8 +43,10 @@ h1 {
     background-color:rgb(216, 208, 140);
     color: rgb(132, 92, 172) ;
     margin-left: 10px;
-
-
+}
+#nextback {
+    text-align:left;
+    padding-left: 34.7%;
 }
 .ABCD {
     margin-top: 50px;
@@ -54,6 +56,6 @@ h1 {
 ul li {
     text-align: left;
     list-style: none;
-    padding-left: 35%;
+    padding-left: 33%;
 
 }

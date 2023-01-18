@@ -527,7 +527,9 @@ function test() {
             ev.stopPropagation();
             ev.preventDefault();
             rectify(randomselection8);
+            
             window.open('indexlast.html');
+            localStorage.setItem("score", score.correct);
         });
 
     }
@@ -552,5 +554,4 @@ the new choices
 the right answer in a randomly selected position
 */
 test();
-
 
