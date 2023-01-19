@@ -11,7 +11,7 @@ addscore.setAttribute("style", "margin-left: 10%")
 var retest = document.getElementById('reset');
 retest.addEventListener('click', function(){
     window.open('./index.html');
-    window.open('','_self').close()
+    window.open('','_self').close();
 });
 
 
