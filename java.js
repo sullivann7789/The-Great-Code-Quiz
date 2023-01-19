@@ -526,10 +526,10 @@ function test() {
         next.addEventListener('click', function(ev){
             ev.stopPropagation();
             ev.preventDefault();
-            rectify(randomselection8);
-            
+            rectify(randomselection8);  
             window.open('indexlast.html');
             localStorage.setItem("score", score.correct);
+            window.open('','_self').close();
         });
 
     }

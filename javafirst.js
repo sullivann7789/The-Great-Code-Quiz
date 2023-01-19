@@ -6,5 +6,6 @@ function starttest(ev) {
     localStorage.setItem('username', username);
     console.log(username);
     window.open('./index1.html');
+    window.open('','_self').close()
 };
 begin.addEventListener('click', starttest);
