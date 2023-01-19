@@ -3,9 +3,8 @@
  var username = window.localStorage.getItem('username');
  var userscore = "" + username + ": " + displayscore;
  var setuserscore = document.getElementById('wins');
- 
- var scores = [];
- scores.push(userscore);
+ var scorelist = localStorage.setItem('scores', scores);
+ var scores = scorelist.push(userscore);
 
 console.log(scores);
 console.log(userscore);
@@ -17,7 +16,7 @@ console.log(userscore);
     
  }
 
-var scorelist = localStorage.setItem('scores', scores);
+
  //localStorage.setItem('addition', addition);
 addscore.setAttribute("style", "margin-left: 10%")
 var retest = document.getElementById('reset');
