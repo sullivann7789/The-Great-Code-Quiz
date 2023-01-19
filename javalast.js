@@ -12,7 +12,7 @@ console.log(userscore);
  for (let i = 0; i < scorelist.length; i++) {
     var addscore = document.createElement('li');
     
-    addscore.innerHTML = JSON.stringify(scorelist[i]);
+    addscore.innerHTML = localStorage.getItem('scores');
     var newscoreadd = setuserscore.appendChild(addscore);
     
  }
