@@ -159,3 +159,18 @@ h2 {
     font-size: 29px;
     align-items: center;
 }
+
+#reset {
+    font-weight: 800;
+    font-style: italic;
+    font-size: 20px;
+    background-color:rgb(216, 208, 140);
+    border-style: none;
+    border-color: black;
+    border: 1px;
+    color: rgb(132, 92, 172);
+    border-radius: 15px;
+    padding: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+}
