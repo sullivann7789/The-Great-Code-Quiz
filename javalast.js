@@ -5,12 +5,13 @@
  var setuserscore = document.getElementById('wins');
  
  var scores = [];
- var pushscorein = scores.push(JSON.stringify(userscore));
+ var pushscorein = scores.push(userscore);
 console.log(scores);
 console.log(userscore);
  for (let i = 0; i < scores.length; i++) {
     var addscore = document.createElement('li');
-    addscore.innerHTML = JSON.stringify(scores);
+    
+    addscore.innerHTML = JSON.stringify(scores[i]);
     var newscoreadd = setuserscore.appendChild(addscore);
     
  }
