@@ -5,7 +5,8 @@
  var setuserscore = document.getElementById('wins');
  
  var scores = [];
- var pushscorein = scores.push(userscore);
+ var pushscorein = localStorage.getItem('scores').push(userscore);
+
 console.log(scores);
 console.log(userscore);
  for (let i = 0; i < scores.length; i++) {
@@ -16,7 +17,7 @@ console.log(userscore);
     
  }
 
- 
+ localStorage.setItem('scores', scores);
  //localStorage.setItem('addition', addition);
 addscore.setAttribute("style", "margin-left: 10%")
 var retest = document.getElementById('reset');
