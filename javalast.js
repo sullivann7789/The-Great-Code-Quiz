@@ -10,7 +10,7 @@ console.log(scores);
 console.log(userscore);
  for (let i = 0; i < scores.length; i++) {
     var addscore = document.createElement('li');
-    addscore.innerHTML = scores;
+    addscore.innerHTML = JSON.stringify(scores);
     var newscoreadd = setuserscore.appendChild(addscore);
     
  }
