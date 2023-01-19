@@ -7,7 +7,7 @@
  var addition = addscore.innerHTML = userscore;
  setuserscore.appendChild(addscore);
  localStorage.setItem('addition', addition);
-
+addscore.setAttribute("style", "margin-left: 8%")
 var retest = document.getElementById('reset');
 retest.addEventListener('click', function(){
     window.open('./index.html');
