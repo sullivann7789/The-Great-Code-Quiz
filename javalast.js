@@ -5,7 +5,7 @@
  var setuserscore = document.getElementById('wins');
  
  var scores = [];
- var pushscorein = localStorage.getItem('scores').push(userscore);
+ scores.push(userscore);
 
 console.log(scores);
 console.log(userscore);
