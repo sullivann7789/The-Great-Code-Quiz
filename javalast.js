@@ -9,15 +9,15 @@
 
 console.log(scores);
 console.log(userscore);
- for (let i = 0; i < scores.length; i++) {
+ for (let i = 0; i < scorelist.length; i++) {
     var addscore = document.createElement('li');
     
-    addscore.innerHTML = JSON.stringify(scores[i]);
+    addscore.innerHTML = JSON.stringify(scorelist[i]);
     var newscoreadd = setuserscore.appendChild(addscore);
     
  }
 
- localStorage.setItem('scores', scores);
+var scorelist = localStorage.setItem('scores', scores);
  //localStorage.setItem('addition', addition);
 addscore.setAttribute("style", "margin-left: 10%")
 var retest = document.getElementById('reset');
