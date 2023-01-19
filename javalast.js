@@ -4,7 +4,7 @@
  var userscore = "" + username + ": " + displayscore;
  var setuserscore = document.getElementById('wins');
  var scorelist = localStorage.setItem('scores', scores);
- var scores = scorelist.push(userscore);
+ var scores = userscore.push(localStorage.getItem('scores'));
 
 console.log(scores);
 console.log(userscore);
