@@ -8,12 +8,12 @@
  var pushscorein = scores.push(JSON.stringify(userscore));
 console.log(scores);
 console.log(userscore);
- for (let i = 0; i < scores.length; i++) {
+ //for (let i = 0; i < scores.length; i++) {
     var addscore = document.createElement('li');
-    var addition = addscore.innerHTML(scores[i]);
+    var addition = addscore.innerHTML(scores);
     var newscoreadd = setuserscore.appendChild(addscore);
     
- }
+ //}
 
  
  localStorage.setItem('addition', addition);
