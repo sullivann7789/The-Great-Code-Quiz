@@ -4,7 +4,7 @@
  var userscore = "" + username + ": " + displayscore;
  var setuserscore = document.getElementById('wins');
  var addscore = document.createElement('li');
- var addition = addscore.innerHTML = "High Scores:\n "+ "\n " + userscore;
+ var addition = addscore.innerHTML = userscore;
  setuserscore.appendChild(addscore);
  localStorage.setItem('addition', addition);
 
