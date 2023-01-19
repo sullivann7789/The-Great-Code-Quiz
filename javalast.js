@@ -8,15 +8,15 @@
  var pushscorein = scores.push(JSON.stringify(userscore));
 console.log(scores);
 console.log(userscore);
- //for (let i = 0; i < scores.length; i++) {
+ for (let i = 0; i < scores.length; i++) {
     var addscore = document.createElement('li');
-    var addition = addscore.innerHTML(scores);
+    addscore.innerHTML = scores[i];
     var newscoreadd = setuserscore.appendChild(addscore);
     
- //}
+ }
 
  
- localStorage.setItem('addition', addition);
+ //localStorage.setItem('addition', addition);
 addscore.setAttribute("style", "margin-left: 10%")
 var retest = document.getElementById('reset');
 retest.addEventListener('click', function(){
