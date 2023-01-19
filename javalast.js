@@ -4,17 +4,17 @@
  var userscore = "" + username + ": " + displayscore;
  var setuserscore = document.getElementById('wins');
  var scorelist = localStorage.setItem('scores', scores);
- var scores = userscore.push(localStorage.getItem('scores'));
+ var scores = userscore;
 
 console.log(scores);
 console.log(userscore);
- for (let i = 0; i < scores.length; i++) {
+ //for (let i = 0; i < scores.length; i++) {
     var addscore = document.createElement('li');
     
-    addscore.innerHTML = scores;
+    addscore.innerHTML = userscore;
     var newscoreadd = setuserscore.appendChild(addscore);
     
- }
+// }
 
 
  //localStorage.setItem('addition', addition);
