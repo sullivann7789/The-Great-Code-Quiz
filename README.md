@@ -31,7 +31,7 @@ It contains 8 advanced questions regarding Javascript, and JQuery.
 
 When working on this project, as the creator, I decided that I would like to create a simplified,
 unique, and eye-catching aesthetic that had a modern taste. This is because I believe it is important for the user,
-particularly in a test-setting, to find themselves in a appealing visual program that doesn't cause to much distraction beyond the task;
+particularly in a test-setting, to find themselves in an appealing visual program that doesn't cause to0 much distraction beyond the task;
 While also initiating a sense of interest and positive mental association with the program through balanced visual stimulation.
 
 ## Web Application URL:
