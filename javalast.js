@@ -5,8 +5,9 @@
  var setuserscore = document.getElementById('wins');
  
  var scores = [];
- var pushscorein = scores.push(userscore);
-
+ var pushscorein = scores.push(JSON.stringify(userscore));
+console.log(scores);
+console.log(userscore);
  for (let i = 0; i < scores.length; i++) {
     var addscore = document.createElement('li');
     var addition = addscore.innerHTML(scores[i]);
