@@ -291,7 +291,6 @@ function test() {
 
         previous.addEventListener("click", function(event){
             event.preventDefault();
-            
             question2();
         });
 
